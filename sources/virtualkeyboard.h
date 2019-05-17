@@ -16,7 +16,7 @@ public:
     ~VirtualKeyboard();
 
 private:
-    Ui::VirtualKeyboard *ui;
+    Ui::VirtualKeyboard *ui = nullptr;
 };
 
 #endif // VIRTUALKEYBOARD_H

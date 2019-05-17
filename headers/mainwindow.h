@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+class VirtualKeyboard;
+
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +19,7 @@ public:
 
 private:
     Ui::MainWindow *ui = nullptr;
+    VirtualKeyboard * p_vkbd = nullptr;
 };
 
 #endif // MAINWINDOW_H
