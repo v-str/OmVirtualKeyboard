@@ -16,13 +16,16 @@ INCLUDEPATH += \
 
 SOURCES += \
         sources/main.cpp \
-        sources/mainwindow.cpp
+        sources/mainwindow.cpp \
+        sources/virtualkeyboard.cpp
 
 HEADERS += \
-        headers/mainwindow.h
+        headers/mainwindow.h \
+        sources/virtualkeyboard.h
 
 FORMS += \
-        ui/mainwindow.ui
+        sources/virtualkeyboard.ui \
+        sources/mainwindow.ui
 
 RESOURCES += \
     resources/test_image.jpg
