@@ -17,7 +17,13 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void processVkbdButton();
+
 private:
+    void setInitialSetting();
+    void setConnections();
+
     Ui::MainWindow *ui = nullptr;
     VirtualKeyboard * p_vkbd = nullptr;
 };

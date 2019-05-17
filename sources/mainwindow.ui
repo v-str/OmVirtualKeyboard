@@ -68,7 +68,7 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QLabel" name="label">
+            <widget class="QLabel" name="loginLabel">
              <property name="minimumSize">
               <size>
                <width>160</width>
@@ -91,7 +91,7 @@ color: rgb(85, 170, 255);</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit">
+            <widget class="QLineEdit" name="loginLE">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -115,7 +115,7 @@ color: rgb(85, 170, 255);</string>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QLabel" name="label_2">
+            <widget class="QLabel" name="passLabel">
              <property name="minimumSize">
               <size>
                <width>160</width>
@@ -138,7 +138,7 @@ color: rgb(85, 170, 255);</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_2">
+            <widget class="QLineEdit" name="passLE">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -162,7 +162,7 @@ color: rgb(85, 170, 255);</string>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QLabel" name="label_3">
+            <widget class="QLabel" name="passConfirmLabel">
              <property name="minimumSize">
               <size>
                <width>160</width>
@@ -185,7 +185,7 @@ color: rgb(85, 170, 255);</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_3">
+            <widget class="QLineEdit" name="passConfirmLE">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -241,7 +241,7 @@ color: rgb(85, 170, 255);</string>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="cancelBtn">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -264,7 +264,7 @@ color: rgb(85, 170, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="okBtn">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -287,7 +287,7 @@ color: rgb(85, 170, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="vkbdBtn">
            <property name="minimumSize">
             <size>
              <width>25</width>
