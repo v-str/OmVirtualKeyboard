@@ -5,10 +5,16 @@ VirtualKeyboard::VirtualKeyboard(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::VirtualKeyboard)
 {
-    ui->setupUi(this);
+    setInitialSetting();
 }
 
 VirtualKeyboard::~VirtualKeyboard()
 {
     delete ui;
+}
+
+void VirtualKeyboard::setInitialSetting()
+{
+    ui->setupUi(this);
+    setWindowTitle("Om Virtual Keyboard");
 }

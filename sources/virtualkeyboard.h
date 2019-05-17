@@ -1,5 +1,5 @@
-#ifndef VIRTUALKEYBOARD_H
-#define VIRTUALKEYBOARD_H
+#ifndef VIRTUAL_KEYBOARD_H
+#define VIRTUAL_KEYBOARD_H
 
 #include <QFrame>
 
@@ -16,7 +16,9 @@ public:
     ~VirtualKeyboard();
 
 private:
+    void setInitialSetting();
+
     Ui::VirtualKeyboard *ui = nullptr;
 };
 
-#endif // VIRTUALKEYBOARD_H
+#endif // VIRTUAL_KEYBOARD_H
