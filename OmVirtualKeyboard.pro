@@ -24,3 +24,6 @@ HEADERS += \
 FORMS += \
         ui/mainwindow.ui
 
+RESOURCES += \
+    resources/test_image.jpg
+
