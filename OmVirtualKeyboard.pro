@@ -3,8 +3,6 @@ QT       += core gui widgets virtualkeyboard
 TARGET = OmVirtualKeyboard
 TEMPLATE = app
 
-DEFINES += QT_DEPRECATED_WARNINGS
-
 CONFIG += c++14
 
 INCLUDEPATH += \
@@ -14,13 +12,13 @@ INCLUDEPATH += \
 
 SOURCES += \
         sources/main.cpp \
-        sources/virtualkeyboard.cpp
+        sources/omvirtualkeyboard.cpp
 
 HEADERS += \
-        headers/virtualkeyboard.h
+        headers/omvirtualkeyboard.h
 
 FORMS += \
-        sources/virtualkeyboard.ui \
+        sources/omvirtualkeyboard.ui \
 
 RESOURCES += \
     resources/test_image.jpg

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>VirtualKeyboard</class>
- <widget class="QFrame" name="VirtualKeyboard">
+ <class>OmVirtualKeyboard</class>
+ <widget class="QFrame" name="OmVirtualKeyboard">
   <property name="geometry">
    <rect>
     <x>0</x>
