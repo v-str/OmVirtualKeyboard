@@ -1,13 +1,27 @@
 #include <QApplication>
+#include <QCoreApplication>
+#include <QCommandLineParser>
 
 #include <omvirtualkeyboard.h>
 
+#define APP_NAME    "omvkbd"
+
+void setAppSetting(QApplication *application);
+
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication application(argc, argv);
+    setAppSetting(&application);
+
+
+
 
     OmVirtualKeyboard vkdb;
     vkdb.show();
 
-    return a.exec();
+    return application.exec();
+}
+
+void setAppSetting(QApplication * application){
+    application->setApplicationName(APP_NAME);
 }

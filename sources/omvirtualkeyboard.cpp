@@ -1,6 +1,8 @@
 #include "omvirtualkeyboard.h"
 #include "ui_omvirtualkeyboard.h"
 
+#include <QApplication>
+
 OmVirtualKeyboard::OmVirtualKeyboard(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::OmVirtualKeyboard)
@@ -19,4 +21,9 @@ void OmVirtualKeyboard::setInitialSetting()
     setWindowTitle("Om Virtual Keyboard");
     setWindowFlags(Qt::WindowDoesNotAcceptFocus |Qt::Tool |
                    Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+}
+
+void OmVirtualKeyboard::on__escapeBtn_clicked()
+{
+    QApplication::quit();
 }

@@ -15,6 +15,9 @@ public:
     explicit OmVirtualKeyboard(QWidget *parent = nullptr);
     ~OmVirtualKeyboard();
 
+private slots:
+    void on__escapeBtn_clicked();
+
 private:
     void setInitialSetting();
 
