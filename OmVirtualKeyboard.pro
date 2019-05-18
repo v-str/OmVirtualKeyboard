@@ -1,4 +1,4 @@
-QT       += core gui widgets virtualkeyboard
+QT += core gui widgets virtualkeyboard
 
 TARGET = OmVirtualKeyboard
 TEMPLATE = app
@@ -6,20 +6,12 @@ TEMPLATE = app
 CONFIG += c++14
 
 INCLUDEPATH += \
-        sources \
-        headers \
-        ui \
+        $$PWD/src \
+        $$PWD/headers \
 
-SOURCES += \
-        sources/main.cpp \
-        sources/omvirtualkeyboard.cpp
+SOURCES += $$PWD/src/*.cpp
 
-HEADERS += \
-        headers/omvirtualkeyboard.h
+HEADERS += $$PWD/headers/*.h
 
-FORMS += \
-        sources/omvirtualkeyboard.ui \
-
-RESOURCES += \
-    resources/test_image.jpg
+FORMS += $$PWD/src/*.ui
 
