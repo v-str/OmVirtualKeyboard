@@ -8,6 +8,7 @@ OmVirtualKeyboard::OmVirtualKeyboard(QWidget *parent) :
     ui(new Ui::OmVirtualKeyboard)
 {
     setInitialSetting();
+    setConnections();
 }
 
 OmVirtualKeyboard::~OmVirtualKeyboard()
@@ -23,7 +24,12 @@ void OmVirtualKeyboard::setInitialSetting()
                    Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
 }
 
-void OmVirtualKeyboard::on__escapeBtn_clicked()
+void OmVirtualKeyboard::setConnections()
+{
+    connect(ui->_escapeBtn, SIGNAL(clicked()), this, SLOT(quitProgramm()));
+}
+
+void OmVirtualKeyboard::quitProgramm()
 {
     QApplication::quit();
 }

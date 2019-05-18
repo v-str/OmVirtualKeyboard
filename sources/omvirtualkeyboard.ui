@@ -32,7 +32,8 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(48, 64, 79);</string>
+   <string notr="true">background-color: rgb(29, 29, 29);
+color: rgb(186, 186, 186);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -376,7 +377,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="_backBtn">
+      <widget class="QPushButton" name="_delBtn">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -390,7 +391,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Back</string>
+        <string>Del</string>
        </property>
       </widget>
      </item>
@@ -1185,7 +1186,7 @@
         </size>
        </property>
        <property name="text">
-        <string>up</string>
+        <string>Up</string>
        </property>
       </widget>
      </item>
@@ -1290,7 +1291,7 @@
         </size>
        </property>
        <property name="text">
-        <string>left</string>
+        <string>Left</string>
        </property>
       </widget>
      </item>
@@ -1309,7 +1310,7 @@
         </size>
        </property>
        <property name="text">
-        <string>down</string>
+        <string>Down</string>
        </property>
       </widget>
      </item>
@@ -1328,7 +1329,7 @@
         </size>
        </property>
        <property name="text">
-        <string>right</string>
+        <string>Right</string>
        </property>
       </widget>
      </item>

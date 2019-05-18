@@ -16,10 +16,11 @@ public:
     ~OmVirtualKeyboard();
 
 private slots:
-    void on__escapeBtn_clicked();
+    void quitProgramm();
 
 private:
     void setInitialSetting();
+    void setConnections();
 
     Ui::OmVirtualKeyboard *ui = nullptr;
 };
