@@ -1,6 +1,8 @@
 #include <QApplication>
 #include <QCoreApplication>
 
+#include <QDebug>
+#include <QStringList>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 
@@ -22,14 +24,17 @@ int main(int argc, char **argv)
     cmdParser.addHelpOption();
     cmdParser.addVersionOption();
 
-    QCommandLineOption position({ "p", "position" },
+    QCommandLineOption positionOption({"p", "position"},
                                 "Set position relative desktop screen",
                                 "",
                                 "100x100");
-    cmdParser.addOption(position);
+    cmdParser.addOption(positionOption);
 
 
     cmdParser.process(application);
+
+    QString positionString  = cmdParser.value(positionOption);
+    qDebug() << positionString;
 
     OmVirtualKeyboard vkdb;
     vkdb.showKeyboard();
