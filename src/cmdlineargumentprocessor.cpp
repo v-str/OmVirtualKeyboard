@@ -1,6 +1,6 @@
-#include "cmdlineargumentsparser.h"
+#include "cmdlineargumentprocessor.h"
 
-CmdLineArgumentsParser::CmdLineArgumentsParser()
+CmdLineArgumentsProcessor::CmdLineArgumentsProcessor()
 {
 
 }

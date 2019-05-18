@@ -1,0 +1,26 @@
+sudo: require
+
+language: cpp
+
+os:
+    - linux
+
+compiler:
+    - gcc
+    - clang
+
+dist: trusty
+
+before_install:
+    - sudo apt-get -qq update
+    - sudo apt-get install -y libgtest-dev valgrind cmake clang
+    - cd "${TRAVIS_BUILD_DIR}"
+
+script:
+    - qmake
+    - make
+    - ./OmVirtualKeyboard
+
+branches:
+  only:
+- develop

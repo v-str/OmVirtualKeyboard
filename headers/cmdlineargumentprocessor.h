@@ -1,11 +1,11 @@
-#ifndef CMDLINEARGUMENTSPARSER_H
-#define CMDLINEARGUMENTSPARSER_H
+#ifndef CMD_LINE_ARGUMENTS_PROCESSOR_H
+#define CMD_LINE_ARGUMENTS_PROCESSOR_H
 
 
-class CmdLineArgumentsParser
+class CmdLineArgumentsProcessor
 {
 public:
-    CmdLineArgumentsParser();
+    CmdLineArgumentsProcessor();
 };
 
-#endif // CMDLINEARGUMENTSPARSER_H
+#endif // CMD_LINE_ARGUMENTS_PROCESSOR_H
