@@ -1,7 +1,14 @@
 #include "omvirtualkeyboard.h"
 #include "ui_omvirtualkeyboard.h"
 
+#include <QDebug>
+#include <QSizePolicy>
 #include <QApplication>
+#include <QResizeEvent>
+
+#define APP_NAME    "omvkbd"
+#define WIDTH       650
+#define HEIGHT      255
 
 OmVirtualKeyboard::OmVirtualKeyboard(QWidget *parent) :
     QFrame(parent),
@@ -16,12 +23,23 @@ OmVirtualKeyboard::~OmVirtualKeyboard()
     delete ui;
 }
 
+void OmVirtualKeyboard::showKeyboard()
+{
+    show();
+}
+
+void OmVirtualKeyboard::resizeEvent(QResizeEvent *event)
+{
+    event->ignore();
+}
+
 void OmVirtualKeyboard::setInitialSetting()
 {
     ui->setupUi(this);
-    setWindowTitle("Om Virtual Keyboard");
-    setWindowFlags(Qt::WindowDoesNotAcceptFocus |Qt::Tool |
+    setWindowTitle(APP_NAME);
+    setWindowFlags(Qt::WindowDoesNotAcceptFocus |
                    Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+    setFixedSize(650,255);
 }
 
 void OmVirtualKeyboard::setConnections()

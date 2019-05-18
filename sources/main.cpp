@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 
     OmVirtualKeyboard vkdb;
-    vkdb.show();
+    vkdb.showKeyboard();
 
     return application.exec();
 }
