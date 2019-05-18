@@ -17,5 +17,6 @@ void OmVirtualKeyboard::setInitialSetting()
 {
     ui->setupUi(this);
     setWindowTitle("Om Virtual Keyboard");
-    setWindowFlags(Qt::FramelessWindowHint);
+    setWindowFlags(Qt::WindowDoesNotAcceptFocus |Qt::Tool |
+                   Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
 }
