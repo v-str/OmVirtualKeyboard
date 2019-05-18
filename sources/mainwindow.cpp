@@ -19,7 +19,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::processVkbdButton()
 {
-    p_vkbd->show();
+    if(p_vkbd->isHidden())
+        p_vkbd->show();
+    else
+        p_vkbd->close();
 }
 
 void MainWindow::setInitialSetting()
