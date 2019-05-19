@@ -14,14 +14,8 @@ int main(int argc, char **argv)
     QScopedPointer<CmdLineArgumentsProcessor> pCmdLineArgsParser(
                 new CmdLineArgumentsProcessor(&application));
 
-    QString position = pCmdLineArgsParser->getPosition();
-    //QString theme = pCmdLineArgsParser->getTheme();
-
-    qDebug() << position;
-
     OmVirtualKeyboard vkdb;
-    vkdb.showKeyboard(/*pCmdLineArgsParser->position,
-                      pCmdLineArgsParser->theme*/);
+    vkdb.showKeyboard();
 
     return application.exec();
 }
