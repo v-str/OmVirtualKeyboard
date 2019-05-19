@@ -3,6 +3,10 @@
 
 #include <QFrame>
 
+#include <QScopedPointer>
+
+class KeyboardGridLayoutConstructor;
+
 namespace Ui {
 class OmVirtualKeyboard;
 }
@@ -21,13 +25,14 @@ protected:
     void resizeEvent(QResizeEvent *event);
 
 private slots:
-    void quitProgramm();
+    void test(const QString &text);
 
 private:
     void setInitialSetting();
     void setConnections();
 
     Ui::OmVirtualKeyboard *ui = Q_NULLPTR;
+    QScopedPointer<KeyboardGridLayoutConstructor> m_pLayoutConstructor;
 };
 
 #endif // OMVIRTUAL_KEYBOARD_H

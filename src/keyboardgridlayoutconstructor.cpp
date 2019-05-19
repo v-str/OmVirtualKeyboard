@@ -27,8 +27,10 @@ void KeyboardGridLayoutConstructor::prepareGridLayout(QWidget *mainWidget)
            keyButtonClicked(m_keySet.at(i).second);
         });
 
-        m_pGridLayout->addWidget(keyButton, 0, 0);
+        m_pGridLayout->addWidget(keyButton, 0, i);
     }
+
+    mainWidget->setLayout(m_pGridLayout);
 }
 
 QGridLayout *KeyboardGridLayoutConstructor::gridLayout()

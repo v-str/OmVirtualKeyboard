@@ -7,6 +7,8 @@
 #include <QResizeEvent>
 #include <QDesktopWidget>
 
+#include "keyboardgridlayoutconstructor.h"
+
 #define APP_NAME    "omvkbd"
 #define WIDTH       650
 #define HEIGHT      255
@@ -14,7 +16,8 @@
 
 OmVirtualKeyboard::OmVirtualKeyboard(QWidget *parent) :
     QFrame(parent),
-    ui(new Ui::OmVirtualKeyboard)
+    ui(new Ui::OmVirtualKeyboard),
+    m_pLayoutConstructor(new KeyboardGridLayoutConstructor())
 {
     setInitialSetting();
     setConnections();
@@ -43,14 +46,17 @@ void OmVirtualKeyboard::setInitialSetting()
     setWindowFlags(Qt::WindowDoesNotAcceptFocus | Qt::Tool |
                    Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     setFixedSize(650,255);
+
+    m_pLayoutConstructor->prepareGridLayout(this);
 }
 
 void OmVirtualKeyboard::setConnections()
 {
-    //connect(ui->_escapeBtn, SIGNAL(clicked()), this, SLOT(quitProgramm()));
+    connect(m_pLayoutConstructor.get(), SIGNAL(keyClicked(const QString &)),
+            this, SLOT(test(QString)));
 }
 
-void OmVirtualKeyboard::quitProgramm()
+void OmVirtualKeyboard::test(const QString & text)
 {
-    QApplication::quit();
+    qDebug() << "TEST: " << text;
 }
