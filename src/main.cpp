@@ -1,21 +1,27 @@
 #include <QApplication>
-#include <QCoreApplication>
-
 #include <QScopedPointer>
+#include <QCoreApplication>
 
 #include <omvirtualkeyboard.h>
 #include <cmdlineargumentprocessor.h>
+
+#include <QDebug>
 
 int main(int argc, char **argv)
 {
     QApplication application(argc, argv);
 
-    OmVirtualKeyboard vkdb;
-
     QScopedPointer<CmdLineArgumentsProcessor> pCmdLineArgsParser(
-                new CmdLineArgumentsProcessor(&application, &vkdb));
+                new CmdLineArgumentsProcessor(&application));
 
-    vkdb.showKeyboard();
+    QString position = pCmdLineArgsParser->getPosition();
+    //QString theme = pCmdLineArgsParser->getTheme();
+
+    qDebug() << position;
+
+    OmVirtualKeyboard vkdb;
+    vkdb.showKeyboard(/*pCmdLineArgsParser->position,
+                      pCmdLineArgsParser->theme*/);
 
     return application.exec();
 }
