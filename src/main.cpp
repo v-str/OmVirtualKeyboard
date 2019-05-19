@@ -1,9 +1,8 @@
 #include <QApplication>
-#include <QScopedPointer>
+#include <QDBusConnection>
 #include <QCoreApplication>
 
 #include <omvirtualkeyboard.h>
-#include <cmdlineargumentprocessor.h>
 
 #include <QDebug>
 
@@ -11,11 +10,24 @@ int main(int argc, char **argv)
 {
     QApplication application(argc, argv);
 
-    QScopedPointer<CmdLineArgumentsProcessor> pCmdLineArgsParser(
-                new CmdLineArgumentsProcessor(&application));
+    if (!QDBusConnection::sessionBus().registerService("omvkbd.inputmethod")) {
+        qFatal("Unable to register service at DBus");
+        return 1;
+    }
 
     OmVirtualKeyboard vkdb;
-    vkdb.showKeyboard();
+
+    bool isRegistrationOk =
+            QDBusConnection::sessionBus().registerObject(
+                "/usr/local/bin/omvkbd",
+                &vkdb,
+                QDBusConnection::ExportAllSignals |
+                QDBusConnection::ExportAllSlots);
+
+    if (!isRegistrationOk) {
+        qFatal("Unable to register object at DBus");
+        return 1;
+    }
 
     return application.exec();
 }
