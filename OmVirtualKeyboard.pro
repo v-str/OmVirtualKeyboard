@@ -10,10 +10,8 @@ INCLUDEPATH += \
         $$PWD/headers \
 
 SOURCES += $$PWD/src/*.cpp \
-    headers/keylayouts.cpp
 
 HEADERS += $$PWD/headers/*.h \
-    headers/keylayouts.h
 
 FORMS += $$PWD/src/*.ui
 
