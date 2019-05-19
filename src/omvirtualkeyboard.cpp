@@ -27,15 +27,6 @@ OmVirtualKeyboard::~OmVirtualKeyboard()
 
 void OmVirtualKeyboard::showKeyboard()
 {
-    QRect desktopGeometry = QApplication::desktop()->geometry();
-    short desktopWidth = desktopGeometry.width();
-    short desktopHeigh = desktopGeometry.height();
-
-    short x = (desktopWidth / 2) - (geometry().width() / 2);
-    short y = desktopHeigh - geometry().height() - MAGIC;
-
-    move(x,y);
-
     show();
 }
 
@@ -56,7 +47,7 @@ void OmVirtualKeyboard::setInitialSetting()
 
 void OmVirtualKeyboard::setConnections()
 {
-    connect(ui->_escapeBtn, SIGNAL(clicked()), this, SLOT(quitProgramm()));
+    //connect(ui->_escapeBtn, SIGNAL(clicked()), this, SLOT(quitProgramm()));
 }
 
 void OmVirtualKeyboard::quitProgramm()

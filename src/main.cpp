@@ -15,12 +15,12 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    OmVirtualKeyboard vkdb;
+    OmVirtualKeyboard vkbd;
 
     bool isRegistrationOk =
             QDBusConnection::sessionBus().registerObject(
                 "/usr/local/bin/omvkbd",
-                &vkdb,
+                &vkbd,
                 QDBusConnection::ExportAllSignals |
                 QDBusConnection::ExportAllSlots);
 
@@ -28,6 +28,8 @@ int main(int argc, char **argv)
         qFatal("Unable to register object at DBus");
         return 1;
     }
+
+    vkbd.show();
 
     return application.exec();
 }
