@@ -11,7 +11,7 @@ INCLUDEPATH += \
 
 SOURCES += $$PWD/src/*.cpp
 
-HEADERS += $$PWD/headers/*.h
+HEADERS += $$PWD/headers/*.h \
 
 FORMS += $$PWD/src/*.ui
 

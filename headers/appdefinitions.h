@@ -1,0 +1,4 @@
+#ifndef APPDEFINITIONS_H
+#define APPDEFINITIONS_H
+
+#endif // APPDEFINITIONS_H
