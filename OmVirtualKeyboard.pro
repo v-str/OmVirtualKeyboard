@@ -16,3 +16,6 @@ HEADERS += $$PWD/headers/*.h \
 DISTFILES += \
     todo.om
 
+FORMS += \
+    src/keyboardwidget.ui
+

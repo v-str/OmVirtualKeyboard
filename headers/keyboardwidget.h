@@ -2,23 +2,23 @@
 #define KEYBOARD_WIDGET_H
 
 #include <QWidget>
-#include <QScopedPointer>
 
-class KeyboardFrameFabric;
+namespace Ui {
+class KeyboardWidget;
+}
 
 class KeyboardWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit KeyboardWidget(QWidget *parent = nullptr);
+    explicit KeyboardWidget(QWidget *parent = Q_NULLPTR);
     ~KeyboardWidget();
 
 private:
     void setInitialSettings();
-    void setDefaultKeyboardLayout();
 
-    QScopedPointer<KeyboardFrameFabric> m_KeyboardFabric;
+    Ui::KeyboardWidget *ui = Q_NULLPTR;
 };
 
 #endif // KEYBOARD_WIDGET_H

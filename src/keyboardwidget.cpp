@@ -1,41 +1,24 @@
 #include "keyboardwidget.h"
-
-#include <QFrame>
-#include <QVBoxLayout>
-
-#include "globalstylesheetsetter.h"
-#include "keyboardframefabric.h"
-
-static constexpr unsigned short fixed_w = 500;
-static constexpr unsigned short fixed_h = 230;
+#include "ui_keyboardwidget.h"
 
 KeyboardWidget::KeyboardWidget(QWidget *parent) :
     QWidget(parent),
-    m_KeyboardFabric(new KeyboardFrameFabric(parent))
+    ui(new Ui::KeyboardWidget)
 {
     setInitialSettings();
-    setDefaultKeyboardLayout();
+
 }
 
 KeyboardWidget::~KeyboardWidget()
 {
+    delete ui;
 }
 
 void KeyboardWidget::setInitialSettings()
 {
-    setFixedSize(fixed_w, fixed_h);
+    ui->setupUi(this);
     setWindowFlags(Qt::WindowDoesNotAcceptFocus |
-                   Qt::Tool | Qt::FramelessWindowHint |
+                   Qt::Tool |
+                   Qt::FramelessWindowHint |
                    Qt::WindowStaysOnTopHint);
-    setStyleSheet(GlobalStylesheetSetter::getKeyboardWidgetStylesheet());
-}
-
-void KeyboardWidget::setDefaultKeyboardLayout()
-{
-    QFrame * pLayoutFrame = m_KeyboardFabric->getFrame(English);
-    QVBoxLayout * pVLayout = new QVBoxLayout();
-    pVLayout->setSpacing(1);
-    pVLayout->setMargin(1);
-    pVLayout->addWidget(pLayoutFrame);
-    setLayout(pVLayout);
 }
