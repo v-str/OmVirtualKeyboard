@@ -1,14 +1,17 @@
 #include "keyboardwidget.h"
 
+#include <QFrame>
 #include <QVBoxLayout>
 
 #include "globalstylesheetsetter.h"
+#include "keyboardframefabric.h"
 
 #define FIXED_W     700
 #define FIXED_H     300
 
 KeyboardWidget::KeyboardWidget(QWidget *parent) :
-    QWidget(parent)
+    QWidget(parent),
+    m_KeyboardFabric(new KeyboardFrameFabric(parent))
 {
     setInitialSettings();
     setDefaultKeyboardLayout();
@@ -29,5 +32,8 @@ void KeyboardWidget::setInitialSettings()
 
 void KeyboardWidget::setDefaultKeyboardLayout()
 {
-
+    QFrame * pLayoutFrame = m_KeyboardFabric->getFrame(English);
+    QVBoxLayout * pVLayout = new QVBoxLayout();
+    pVLayout->addWidget(pLayoutFrame);
+    setLayout(pVLayout);
 }

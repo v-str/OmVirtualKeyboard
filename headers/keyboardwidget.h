@@ -2,6 +2,9 @@
 #define KEYBOARD_WIDGET_H
 
 #include <QWidget>
+#include <QScopedPointer>
+
+class KeyboardFrameFabric;
 
 class KeyboardWidget : public QWidget
 {
@@ -14,6 +17,8 @@ public:
 private:
     void setInitialSettings();
     void setDefaultKeyboardLayout();
+
+    QScopedPointer<KeyboardFrameFabric> m_KeyboardFabric;
 };
 
 #endif // KEYBOARD_WIDGET_H

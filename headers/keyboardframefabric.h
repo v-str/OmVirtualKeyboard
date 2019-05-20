@@ -7,14 +7,13 @@
 #include "keyboardlayout.h"
 
 class QFrame;
-class QWidget;
 
 class KeyboardFrameFabric : public QObject {
     Q_OBJECT
 public:
     explicit KeyboardFrameFabric(QObject * parent = Q_NULLPTR);
 
-    QFrame * getFrame(QWidget * parent, Layout layout);
+    QFrame * getFrame(Layout layout);
 
 private:
     void fillFrame(const Keys & keys, QFrame * pFrame);

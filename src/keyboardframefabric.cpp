@@ -1,6 +1,7 @@
 #include "keyboardframefabric.h"
 
 #include <QFrame>
+#include <QPushButton>
 #include <QHBoxLayout>
 
 KeyboardFrameFabric::KeyboardFrameFabric(QObject * parent)
@@ -10,11 +11,11 @@ KeyboardFrameFabric::KeyboardFrameFabric(QObject * parent)
 
 }
 
-QFrame *KeyboardFrameFabric::getFrame(QWidget *parent, Layout layout)
+QFrame *KeyboardFrameFabric::getFrame(Layout layout)
 {
     Q_UNUSED(layout);
 
-    QFrame * pFrame = new QFrame(parent);
+    QFrame * pFrame = new QFrame();
 
     switch (layout) {
     case English:
@@ -25,11 +26,16 @@ QFrame *KeyboardFrameFabric::getFrame(QWidget *parent, Layout layout)
     }
 
 
-    return Q_NULLPTR;
+    return pFrame;
 }
 
 void KeyboardFrameFabric::fillFrame(const Keys &keys, QFrame *pFrame)
 {
     Q_UNUSED(keys);
     Q_UNUSED(pFrame);
+
+    QPushButton * pButton = new QPushButton("test");
+    QHBoxLayout * pHLayout = new QHBoxLayout;
+    pHLayout->addWidget(pButton);
+    pFrame->setLayout(pHLayout);
 }
