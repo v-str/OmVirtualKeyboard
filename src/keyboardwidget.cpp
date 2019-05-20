@@ -1,5 +1,7 @@
 #include "keyboardwidget.h"
 
+#include "globalstylesheetsetter.h"
+
 #define FIXED_W     700
 #define FIXED_H     300
 
@@ -19,4 +21,5 @@ void KeyboardWidget::setInitialSettings()
     setWindowFlags(Qt::WindowDoesNotAcceptFocus |
                    Qt::Tool | Qt::FramelessWindowHint |
                    Qt::WindowStaysOnTopHint);
+    setStyleSheet(GlobalStylesheetSetter::getKeyboardWidgetStylesheet());
 }
