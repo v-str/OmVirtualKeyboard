@@ -3,6 +3,7 @@
 
 #include <Qt>
 #include <QPair>
+#include <QString>
 #include <QVector>
 
 enum Layout{
@@ -10,7 +11,7 @@ enum Layout{
     Russian
 };
 
-typedef QVector <QPair<Qt::Key, char> > Keys;
+typedef QVector <QPair<Qt::Key, QString> > Keys;
 
 class KeyboardLayout
 {
