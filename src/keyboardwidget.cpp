@@ -23,3 +23,8 @@ void KeyboardWidget::setInitialSettings()
                    Qt::WindowStaysOnTopHint);
     setStyleSheet(GlobalStylesheetSetter::getKeyboardWidgetStylesheet());
 }
+
+void KeyboardWidget::setDefaultKeyboardLayout()
+{
+
+}

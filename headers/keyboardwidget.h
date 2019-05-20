@@ -13,6 +13,7 @@ public:
 
 private:
     void setInitialSettings();
+    void setDefaultKeyboardLayout();
 };
 
 #endif // KEYBOARD_WIDGET_H
