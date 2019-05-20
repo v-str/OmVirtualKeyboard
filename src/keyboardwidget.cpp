@@ -1,5 +1,7 @@
 #include "keyboardwidget.h"
 
+#include <QVBoxLayout>
+
 #include "globalstylesheetsetter.h"
 
 #define FIXED_W     700
@@ -9,6 +11,7 @@ KeyboardWidget::KeyboardWidget(QWidget *parent) :
     QWidget(parent)
 {
     setInitialSettings();
+    setDefaultKeyboardLayout();
 }
 
 KeyboardWidget::~KeyboardWidget()

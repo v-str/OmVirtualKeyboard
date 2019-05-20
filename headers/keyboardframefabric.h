@@ -2,6 +2,9 @@
 #define KEYBOARD_FRAME_FABRIC_H
 
 #include <QObject>
+#include <QScopedPointer>
+
+#include "keyboardlayout.h"
 
 class QFrame;
 class QWidget;
@@ -11,8 +14,12 @@ class KeyboardFrameFabric : public QObject {
 public:
     explicit KeyboardFrameFabric(QObject * parent = Q_NULLPTR);
 
-    QFrame * getFrame(QWidget * parent/*Future Enum of layouts*/);
+    QFrame * getFrame(QWidget * parent, Layout layout);
 
+private:
+    void fillFrame(const Keys & keys, QFrame * pFrame);
+
+    QScopedPointer<KeyboardLayout> m_layout;
 };
 
 #endif // KEYBOARD_FRAME_FABRIC_H
