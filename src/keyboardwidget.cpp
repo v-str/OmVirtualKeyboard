@@ -6,8 +6,8 @@
 #include "globalstylesheetsetter.h"
 #include "keyboardframefabric.h"
 
-static constexpr unsigned short fixed_w = 700;
-static constexpr unsigned short fixed_h = 300;
+static constexpr unsigned short fixed_w = 500;
+static constexpr unsigned short fixed_h = 230;
 
 KeyboardWidget::KeyboardWidget(QWidget *parent) :
     QWidget(parent),
@@ -34,6 +34,8 @@ void KeyboardWidget::setDefaultKeyboardLayout()
 {
     QFrame * pLayoutFrame = m_KeyboardFabric->getFrame(English);
     QVBoxLayout * pVLayout = new QVBoxLayout();
+    pVLayout->setSpacing(1);
+    pVLayout->setMargin(1);
     pVLayout->addWidget(pLayoutFrame);
     setLayout(pVLayout);
 }

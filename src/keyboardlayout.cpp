@@ -36,6 +36,7 @@ Keys KeyboardLayout::constructEnglishLayout()
         {Qt::Key_O, "o"},
         {Qt::Key_P, "p"},
         {Qt::Key_A, "a"},
+        {Qt::Key_P, "Caps"},
         {Qt::Key_S, "s"},
         {Qt::Key_D, "d"},
         {Qt::Key_F, "f"},

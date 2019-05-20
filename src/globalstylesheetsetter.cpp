@@ -3,7 +3,8 @@
 QString GlobalStylesheetSetter::getKeyboardWidgetStylesheet()
 {
     static QString stylesheet = "QWidget {"
-                         "background-color: #242423;"
+                         "background-color: #444444;"
+                         "color: #C9C9C9;"
                          "}";
 
     return stylesheet;
