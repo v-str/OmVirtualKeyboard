@@ -16,6 +16,7 @@ KeyboardWidget::KeyboardWidget(QWidget *parent) :
 {
     setInitialSettings();
     setDefaultKeyboard();
+    setConnections();
 }
 
 KeyboardWidget::~KeyboardWidget()
@@ -42,9 +43,10 @@ void KeyboardWidget::setDefaultKeyboard()
     pVLayout->addWidget(m_pDigitsFrame);
     pVLayout->addWidget(m_pEngKeyboard);
 
-    pVLayout->setContentsMargins(1,1,1,1);
-    pVLayout->setSpacing(2);
-    pVLayout->setSizeConstraint(QLayout::SetMinimumSize);
-
     setLayout(pVLayout);
+}
+
+void KeyboardWidget::setConnections()
+{
+
 }

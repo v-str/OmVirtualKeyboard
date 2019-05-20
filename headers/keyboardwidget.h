@@ -21,6 +21,7 @@ public:
 private:
     void setInitialSettings();
     void setDefaultKeyboard();
+    void setConnections();
 
     Ui::KeyboardWidget *ui = Q_NULLPTR;
     EngKeyboard * m_pEngKeyboard = Q_NULLPTR;
