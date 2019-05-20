@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+class EngKeyboard;
+
 namespace Ui {
 class KeyboardWidget;
 }
@@ -17,8 +19,10 @@ public:
 
 private:
     void setInitialSettings();
+    void setDefaultKeyboard();
 
     Ui::KeyboardWidget *ui = Q_NULLPTR;
+    EngKeyboard * m_pEngKeyboard = Q_NULLPTR;
 };
 
 #endif // KEYBOARD_WIDGET_H
