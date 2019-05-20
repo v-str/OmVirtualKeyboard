@@ -6,8 +6,8 @@
 #include "globalstylesheetsetter.h"
 #include "keyboardframefabric.h"
 
-#define FIXED_W     700
-#define FIXED_H     300
+static constexpr unsigned short fixed_w = 700;
+static constexpr unsigned short fixed_h = 300;
 
 KeyboardWidget::KeyboardWidget(QWidget *parent) :
     QWidget(parent),
@@ -23,7 +23,7 @@ KeyboardWidget::~KeyboardWidget()
 
 void KeyboardWidget::setInitialSettings()
 {
-    setFixedSize(FIXED_W, FIXED_H);
+    setFixedSize(fixed_w, fixed_h);
     setWindowFlags(Qt::WindowDoesNotAcceptFocus |
                    Qt::Tool | Qt::FramelessWindowHint |
                    Qt::WindowStaysOnTopHint);
