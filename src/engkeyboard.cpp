@@ -1,11 +1,15 @@
 #include "engkeyboard.h"
 #include "ui_engkeyboard.h"
 
+#include <QDebug>
+
 EngKeyboard::EngKeyboard(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::EngKeyboard)
 {
     ui->setupUi(this);
+    setButtonList();
+    setConnections();
 }
 
 EngKeyboard::~EngKeyboard()
@@ -15,6 +19,8 @@ EngKeyboard::~EngKeyboard()
 
 void EngKeyboard::keyPressed(const QString &text)
 {
+    qDebug() << text << " clicked!";
+
     if (text.length() == CHAR) {
         emit charKeyPressed(text);
     } else if (text.length() == CAPS){
