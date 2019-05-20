@@ -9,14 +9,15 @@ INCLUDEPATH += \
         $$PWD/src \
         $$PWD/headers \
 
-SOURCES += $$PWD/src/*.cpp
+SOURCES += $$PWD/src/*.cpp \
 
-HEADERS += $$PWD/headers/*.h
+HEADERS += $$PWD/headers/*.h \
 
 DISTFILES += \
     todo.om
 
 FORMS += \
+    src/digitsframe.ui \
     src/engkeyboard.ui \
     src/keyboardwidget.ui
 

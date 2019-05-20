@@ -4,6 +4,7 @@
 #include <QWidget>
 
 class EngKeyboard;
+class DigitsFrame;
 
 namespace Ui {
 class KeyboardWidget;
@@ -23,6 +24,7 @@ private:
 
     Ui::KeyboardWidget *ui = Q_NULLPTR;
     EngKeyboard * m_pEngKeyboard = Q_NULLPTR;
+    DigitsFrame * m_pDigitsFrame = Q_NULLPTR;
 };
 
 #endif // KEYBOARD_WIDGET_H
