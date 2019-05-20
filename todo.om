@@ -6,5 +6,7 @@
 
 2. Add KeyLayouts for different purposes.
 
+3. Construct keyboard in separate frames.
+
 
 3. Dbus ...
