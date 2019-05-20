@@ -7,8 +7,8 @@
 #include "engkeyboard.h"
 #include "digitsframe.h"
 
-static constexpr short keyboard_width = 540;
-static constexpr short keyboard_height = 180;
+static constexpr short keyboard_width = 550;
+static constexpr short keyboard_height = 200;
 
 KeyboardWidget::KeyboardWidget(QWidget *parent) :
     QWidget(parent),

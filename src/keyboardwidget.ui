@@ -27,7 +27,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(31, 31, 31);
-color: rgb(165, 165, 165);</string>
+color: rgb(197, 194, 88);
+border-color: rgb(102, 102, 102);</string>
   </property>
  </widget>
  <resources/>
