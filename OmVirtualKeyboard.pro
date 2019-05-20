@@ -13,8 +13,6 @@ SOURCES += $$PWD/src/*.cpp \
 
 HEADERS += $$PWD/headers/*.h \
 
-FORMS += $$PWD/src/*.ui
-
 DISTFILES += \
     todo.om
 
