@@ -10,6 +10,16 @@ QList<QString> KeyboardSymbols::getEnglishSpecialSymbols()
     return {"!","@","#","$","%","^","&&","*","(",")",};
 }
 
+QList<QString> KeyboardSymbols::getNonCapsLastSymbols()
+{
+    return {",",".","/"};
+}
+
+QList<QString> KeyboardSymbols::getCapsLastSymbols()
+{
+    return {"-","_","\\"};
+}
+
 QList<QString> KeyboardSymbols::getRussianSpecialSymbols()
 {
     return {"!","\"","№",";","%",":","?","*","(",")",};

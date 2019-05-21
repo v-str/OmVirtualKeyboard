@@ -3,6 +3,10 @@
 
 #include <QDebug>
 
+#include "keyboardsymbols.h"
+
+static constexpr int lastNonAlphabetSymbolsCount = 3;
+
 EngKeyboard::EngKeyboard(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::EngKeyboard)
@@ -20,14 +24,16 @@ EngKeyboard::~EngKeyboard()
 
 void EngKeyboard::keyPressed(const QString &text)
 {
-    qDebug() << text << " clicked!";
 
     if (text.length() == CHAR) {
+        qDebug() << text << " char!";
         emit charKeyPressed(text);
     } else if (text.length() == CAPS){
+        qDebug() << text << " caps!";
         emit swapDigitsToSpecialCharacters();
         emit capsKeyPressed();
     } else if (text.length() == ENG){
+        qDebug() << text << " lang!";
         emit switchLangPressed();
     }
 }
@@ -35,6 +41,7 @@ void EngKeyboard::keyPressed(const QString &text)
 void EngKeyboard::setButtonList()
 {
     m_buttonList = findChildren<QPushButton*>();
+    m_isUpper = m_buttonList.at(0)->text().isUpper();
 }
 
 void EngKeyboard::setConnections()
@@ -50,10 +57,18 @@ void EngKeyboard::setConnections()
 
 void EngKeyboard::invertCaps()
 {
+    invertLetters();
+    invertAlphabetEnding();
+    m_isUpper = !m_isUpper;
+}
+
+void EngKeyboard::invertLetters()
+{
     QString text;
+
     for(auto i = 0; i < m_buttonList.size(); ++i){
         if (m_buttonList.at(i)->text().length() == CHAR){
-            if(m_buttonList.at(i)->text().isUpper()){
+            if(m_isUpper){
                 text = m_buttonList[i]->text().toLower();
                 m_buttonList[i]->setText(text);
             } else {
@@ -64,6 +79,21 @@ void EngKeyboard::invertCaps()
     }
 }
 
-
+void EngKeyboard::invertAlphabetEnding()
+{
+    auto j = 0;
+    auto i = m_buttonList.size() - lastNonAlphabetSymbolsCount;
+    QList<QString> lastCapsSymbols = KeyboardSymbols::getCapsLastSymbols();
+    QList<QString> lastNonCapsSymbols = KeyboardSymbols::getNonCapsLastSymbols();
+    for (;i < m_buttonList.size(); ++i){
+        if (m_isUpper){
+            m_buttonList[i]->setText(lastNonCapsSymbols.at(j));
+            ++j;
+        } else {
+            m_buttonList[i]->setText(lastCapsSymbols.at(j));
+            ++j;
+        }
+    }
+}
 
 

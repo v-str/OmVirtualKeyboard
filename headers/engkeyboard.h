@@ -38,9 +38,13 @@ private:
     void setButtonList();
     void setConnections();
 
+    void invertLetters();
+    void invertAlphabetEnding();
+
     Ui::EngKeyboard *ui = Q_NULLPTR;
 
     QList<QPushButton*> m_buttonList;
+    bool m_isUpper = false;
 };
 
 #endif // ENG_KEYBOARD_H

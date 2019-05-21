@@ -15,6 +15,8 @@ class KeyboardSymbols
 public:
 
     static QList<QString> getDigits();
+    static QList<QString> getNonCapsLastSymbols();
+    static QList<QString> getCapsLastSymbols();
 
     static QList<QString> getEnglishSpecialSymbols();
     static QList<QString> getRussianSpecialSymbols();
