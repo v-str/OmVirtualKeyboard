@@ -41,7 +41,11 @@ void DigitsFrame::switchFrame()
 
 void DigitsFrame::digitPressed(const QString &text)
 {
-    qDebug() << text << " clicked!";
+    if (text == "&&"){
+        qDebug() << "&" << " clicked!";
+    } else {
+        qDebug() << text << " clicked!";
+    }
 }
 
 void DigitsFrame::setInitialSetting()
