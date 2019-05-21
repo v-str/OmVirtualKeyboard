@@ -1,6 +1,8 @@
 #include "keyboardwidget.h"
 #include "ui_keyboardwidget.h"
 
+#include <QDebug>
+
 #include <QFrame>
 #include <QVBoxLayout>
 
@@ -76,6 +78,11 @@ void KeyboardWidget::setConnections()
 
     connect(m_pEngKeyboard,SIGNAL(switchLangPressed()),SLOT(switchKeyboard()));
     connect(m_pRusKeyboard,SIGNAL(switchLangPressed()),SLOT(switchKeyboard()));
+
+    connect(m_pEngKeyboard,SIGNAL(charKeyPressed(QString)),
+            SLOT(keyboardCharKeyPressed(QString)));
+    connect(m_pRusKeyboard,SIGNAL(charKeyPressed(QString)),
+            SLOT(keyboardCharKeyPressed(QString)));
 }
 
 void KeyboardWidget::switchDigitsFrame(DigitsFrameType digitsFrameType)
@@ -88,4 +95,10 @@ void KeyboardWidget::switchDigitsFrame(DigitsFrameType digitsFrameType)
     }
 
     m_pDigitsFrame->switchFrame();
+}
+
+void KeyboardWidget::keyboardCharKeyPressed(const QString &keyText)
+{
+    qDebug() << keyText << " clicked!";
+    emit keyPressed(keyText);
 }

@@ -1,7 +1,5 @@
 #include "basekeyboard.h"
 
-#include <QDebug>
-
 #include "keyboardsymbols.h"
 
 static constexpr int lastNonAlphabetSymbolsCount = 3;
@@ -19,13 +17,10 @@ BaseKeyboard::~BaseKeyboard()
 void BaseKeyboard::keyPressed(const QString &text)
 {
     if (text.length() == CHAR) {
-        qDebug() << text << " char!";
         emit charKeyPressed(text);
     } else if (text.length() == CAPS){
-        qDebug() << text << " caps!";
         emit capsKeyPressed();
     } else if (text.length() == LANG){
-        qDebug() << text << " lang!";
         emit switchLangPressed();
     }
 }

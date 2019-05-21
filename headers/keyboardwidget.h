@@ -2,6 +2,7 @@
 #define KEYBOARD_WIDGET_H
 
 #include <QWidget>
+#include <QString>
 
 #include <digitsframe.h>
 #include "keyboardsymbols.h"
@@ -21,9 +22,13 @@ public:
     explicit KeyboardWidget(QWidget *parent = Q_NULLPTR);
     ~KeyboardWidget();
 
+signals:
+    void keyPressed(const QString & keyText);
+
 private slots:
     void switchKeyboard();
     void switchDigitsFrame(DigitsFrameType digitsFrameType);
+    void keyboardCharKeyPressed(const QString & keyText);
 
 private:
     void setInitialSettings();
