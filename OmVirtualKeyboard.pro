@@ -18,6 +18,7 @@ INCLUDEPATH += \
         $$PWD/headers \
 
 SOURCES += \
+    basekeyboard.cpp \
     ruskeyboard.cpp \
     keyboardsymbols.cpp \
     main.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
 HEADERS += \
     digitsframe.h \
     engkeyboard.h \
+    basekeyboard.h \
     ruskeyboard.h \
     keyboardsymbols.h \
     keyboardwidget.h
