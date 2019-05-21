@@ -9,7 +9,7 @@
 enum KeyType {
     CHAR = 1,
     CAPS = 4,
-    SPACE = 5
+    ENG = 3
 };
 
 namespace Ui {
@@ -27,7 +27,8 @@ public:
 signals:
     void charKeyPressed(const QString & text);
     void capsKeyPressed();
-    void spaceKeyPressed();
+    void swapDigitsToSpecialCharacters();
+    void switchLangPressed();
 
 private slots:
     void keyPressed(const QString & text);
