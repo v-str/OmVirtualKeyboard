@@ -38,6 +38,7 @@ private:
     void setInitialSettings();
     void setDefaultKeyboard();
     void setConnections();
+    bool isTextReceiverReady() const;
 
     Ui::KeyboardWidget *ui = Q_NULLPTR;
 

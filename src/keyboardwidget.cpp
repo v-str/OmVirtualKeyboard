@@ -94,6 +94,11 @@ void KeyboardWidget::setConnections()
             SLOT(deleteKey()));
 }
 
+bool KeyboardWidget::isTextReceiverReady() const
+{
+    return m_pTextReceiver != Q_NULLPTR;
+}
+
 void KeyboardWidget::switchDigitsFrame(DigitsFrameType digitsFrameType)
 {
     DigitsFrameType frameType = m_pDigitsFrame->getFrameType();
@@ -108,15 +113,19 @@ void KeyboardWidget::switchDigitsFrame(DigitsFrameType digitsFrameType)
 
 void KeyboardWidget::keyboardCharKeyPressed(const QString &keyText)
 {
-    QString receiverString = m_pTextReceiver->text();
-    receiverString.append(keyText);
-    m_pTextReceiver->setText(receiverString);
+    if (isTextReceiverReady()) {
+        QString receiverString = m_pTextReceiver->text();
+        receiverString.append(keyText);
+        m_pTextReceiver->setText(receiverString);
+    }
 }
 
 void KeyboardWidget::deleteKey()
 {
-    QString receiverString = m_pTextReceiver->text();
-    auto lastSymbol = receiverString.size() - 1;
-    receiverString.remove(lastSymbol);
-    m_pTextReceiver->setText(receiverString);
+    if (isTextReceiverReady()){
+        QString receiverString = m_pTextReceiver->text();
+        auto lastSymbol = receiverString.size() - 1;
+        receiverString.remove(lastSymbol);
+        m_pTextReceiver->setText(receiverString);
+    }
 }
