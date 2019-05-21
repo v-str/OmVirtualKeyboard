@@ -28,9 +28,11 @@ void KeyboardWidget::switchKeyboard()
 {
     if (m_pEngKeyboard->isHidden()){
         m_pRusKeyboard->hide();
+        setFixedWidth(m_pEngKeyboard->getOptimalParentWidgetWidth());
         m_pEngKeyboard->show();
     } else {
         m_pEngKeyboard->hide();
+        setFixedWidth(m_pRusKeyboard->getOptimalParentWidgetWidth());
         m_pRusKeyboard->show();
     }
 }

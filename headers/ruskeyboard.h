@@ -15,6 +15,8 @@ public:
     explicit RusKeyboard(QWidget *parent = Q_NULLPTR);
     ~RusKeyboard();
 
+    short getOptimalParentWidgetWidth() const override;
+
 private:
     Ui::RusKeyboard *ui = Q_NULLPTR;
 };

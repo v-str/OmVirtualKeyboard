@@ -15,6 +15,8 @@ public:
     explicit EngKeyboard(QWidget *parent = Q_NULLPTR);
     ~EngKeyboard();
 
+    short getOptimalParentWidgetWidth() const override;
+
 private:
     Ui::EngKeyboard *ui = Q_NULLPTR;
 };

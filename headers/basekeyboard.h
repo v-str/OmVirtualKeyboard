@@ -11,6 +11,9 @@ class BaseKeyboard : public QFrame
     Q_OBJECT
 public:
     explicit BaseKeyboard(QWidget *parent = Q_NULLPTR);
+    virtual ~BaseKeyboard();
+
+    virtual short getOptimalParentWidgetWidth() const = 0;
 
 signals:
     void charKeyPressed(const QString & text);

@@ -5,6 +5,8 @@
 
 #include "keyboardsymbols.h"
 
+static constexpr short optimalParentWidgetWidth = 620;
+
 RusKeyboard::RusKeyboard(QWidget *parent) :
     BaseKeyboard(parent),
     ui(new Ui::RusKeyboard)
@@ -18,4 +20,9 @@ RusKeyboard::RusKeyboard(QWidget *parent) :
 RusKeyboard::~RusKeyboard()
 {
     delete ui;
+}
+
+short RusKeyboard::getOptimalParentWidgetWidth() const
+{
+    return optimalParentWidgetWidth;
 }

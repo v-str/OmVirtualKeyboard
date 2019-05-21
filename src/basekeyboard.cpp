@@ -11,6 +11,11 @@ BaseKeyboard::BaseKeyboard(QWidget *parent) : QFrame(parent)
 
 }
 
+BaseKeyboard::~BaseKeyboard()
+{
+
+}
+
 void BaseKeyboard::keyPressed(const QString &text)
 {
     if (text.length() == CHAR) {
