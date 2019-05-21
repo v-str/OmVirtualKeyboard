@@ -30,9 +30,8 @@ void EngKeyboard::keyPressed(const QString &text)
         emit charKeyPressed(text);
     } else if (text.length() == CAPS){
         qDebug() << text << " caps!";
-        emit swapDigitsToSpecialCharacters();
         emit capsKeyPressed();
-    } else if (text.length() == ENG){
+    } else if (text.length() == LANG){
         qDebug() << text << " lang!";
         emit switchLangPressed();
     }

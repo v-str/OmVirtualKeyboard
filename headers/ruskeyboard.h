@@ -1,5 +1,5 @@
-#ifndef ENG_KEYBOARD_H
-#define ENG_KEYBOARD_H
+#ifndef RUSKEYBOARD_H
+#define RUSKEYBOARD_H
 
 #include <QFrame>
 
@@ -7,16 +7,16 @@
 #include <QList>
 
 namespace Ui {
-class EngKeyboard;
+class RusKeyboard;
 }
 
-class EngKeyboard : public QFrame
+class RusKeyboard : public QFrame
 {
     Q_OBJECT
 
 public:
-    explicit EngKeyboard(QWidget *parent = Q_NULLPTR);
-    ~EngKeyboard();
+    explicit RusKeyboard(QWidget *parent = Q_NULLPTR);
+    ~RusKeyboard();
 
 signals:
     void charKeyPressed(const QString & text);
@@ -34,10 +34,10 @@ private:
     void invertLetters();
     void invertAlphabetEnding();
 
-    Ui::EngKeyboard *ui = Q_NULLPTR;
+    Ui::RusKeyboard *ui = Q_NULLPTR;
 
     QList<QPushButton*> m_buttonList;
     bool m_isUpper = false;
 };
 
-#endif // ENG_KEYBOARD_H
+#endif // RUSKEYBOARD_H

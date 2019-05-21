@@ -61,4 +61,6 @@ void KeyboardWidget::setConnections()
         m_pDigitsFrame->switchFrame();
 
     });
+
+
 }

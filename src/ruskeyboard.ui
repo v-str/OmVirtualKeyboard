@@ -1,38 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>EngKeyboard</class>
- <widget class="QFrame" name="EngKeyboard">
+ <class>RusKeyboard</class>
+ <widget class="QFrame" name="RusKeyboard">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>144</height>
+    <width>606</width>
+    <height>156</height>
    </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>400</width>
-    <height>0</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>9999</width>
-    <height>9999</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -51,20 +30,14 @@
     <number>0</number>
    </property>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <property name="spacing">
       <number>2</number>
      </property>
-     <property name="sizeConstraint">
-      <enum>QLayout::SetMinimumSize</enum>
-     </property>
      <item>
-      <spacer name="horizontalSpacer_3">
+      <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -75,13 +48,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_lang">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
+      <widget class="QPushButton" name="pushButton_38">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -95,12 +62,12 @@
         </size>
        </property>
        <property name="text">
-        <string>Eng</string>
+        <string>Lang</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_q">
+      <widget class="QPushButton" name="pushButton">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -114,12 +81,12 @@
         </size>
        </property>
        <property name="text">
-        <string>q</string>
+        <string>й</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_w">
+      <widget class="QPushButton" name="pushButton_2">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -133,12 +100,12 @@
         </size>
        </property>
        <property name="text">
-        <string>w</string>
+        <string>ц</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_e">
+      <widget class="QPushButton" name="pushButton_4">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -152,12 +119,12 @@
         </size>
        </property>
        <property name="text">
-        <string>e</string>
+        <string>у</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_r">
+      <widget class="QPushButton" name="pushButton_3">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -171,12 +138,12 @@
         </size>
        </property>
        <property name="text">
-        <string>r</string>
+        <string>к</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_t">
+      <widget class="QPushButton" name="pushButton_8">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -190,12 +157,12 @@
         </size>
        </property>
        <property name="text">
-        <string>t</string>
+        <string>е</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_y">
+      <widget class="QPushButton" name="pushButton_7">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -209,12 +176,12 @@
         </size>
        </property>
        <property name="text">
-        <string>y</string>
+        <string>е</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_u">
+      <widget class="QPushButton" name="pushButton_5">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -228,12 +195,12 @@
         </size>
        </property>
        <property name="text">
-        <string>u</string>
+        <string>н</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_i">
+      <widget class="QPushButton" name="pushButton_6">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -247,12 +214,12 @@
         </size>
        </property>
        <property name="text">
-        <string>i</string>
+        <string>г</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_o">
+      <widget class="QPushButton" name="pushButton_18">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -266,12 +233,12 @@
         </size>
        </property>
        <property name="text">
-        <string>o</string>
+        <string>ш</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_p">
+      <widget class="QPushButton" name="pushButton_17">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -285,17 +252,71 @@
         </size>
        </property>
        <property name="text">
-        <string>p</string>
+        <string>щ</string>
        </property>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_6">
+      <widget class="QPushButton" name="pushButton_19">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>з</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_20">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>х</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_16">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>ъ</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -308,20 +329,14 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <property name="spacing">
       <number>2</number>
      </property>
-     <property name="sizeConstraint">
-      <enum>QLayout::SetMinimumSize</enum>
-     </property>
      <item>
-      <spacer name="horizontalSpacer">
+      <spacer name="horizontalSpacer_4">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -332,7 +347,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_caps">
+      <widget class="QPushButton" name="pushButton_37">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -351,7 +366,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_a">
+      <widget class="QPushButton" name="pushButton_12">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -365,12 +380,12 @@
         </size>
        </property>
        <property name="text">
-        <string>a</string>
+        <string>ф</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_s">
+      <widget class="QPushButton" name="pushButton_14">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -384,12 +399,12 @@
         </size>
        </property>
        <property name="text">
-        <string>s</string>
+        <string>ы</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_d">
+      <widget class="QPushButton" name="pushButton_11">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -403,12 +418,12 @@
         </size>
        </property>
        <property name="text">
-        <string>d</string>
+        <string>в</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_f">
+      <widget class="QPushButton" name="pushButton_9">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -422,12 +437,12 @@
         </size>
        </property>
        <property name="text">
-        <string>f</string>
+        <string>а</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_g">
+      <widget class="QPushButton" name="pushButton_13">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -441,12 +456,12 @@
         </size>
        </property>
        <property name="text">
-        <string>g</string>
+        <string>п</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_h">
+      <widget class="QPushButton" name="pushButton_10">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -460,12 +475,12 @@
         </size>
        </property>
        <property name="text">
-        <string>h</string>
+        <string>р</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_j">
+      <widget class="QPushButton" name="pushButton_15">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -479,12 +494,12 @@
         </size>
        </property>
        <property name="text">
-        <string>j</string>
+        <string>о</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_k">
+      <widget class="QPushButton" name="pushButton_22">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -498,12 +513,12 @@
         </size>
        </property>
        <property name="text">
-        <string>k</string>
+        <string>л</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_l">
+      <widget class="QPushButton" name="pushButton_21">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -517,17 +532,52 @@
         </size>
        </property>
        <property name="text">
-        <string>l</string>
+        <string>д</string>
        </property>
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_2">
+      <widget class="QPushButton" name="pushButton_23">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>ж</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_25">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>э</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -540,31 +590,25 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
      <property name="spacing">
       <number>2</number>
      </property>
-     <property name="sizeConstraint">
-      <enum>QLayout::SetMinimumSize</enum>
-     </property>
      <item>
-      <spacer name="horizontalSpacer_5">
+      <spacer name="horizontalSpacer_6">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
-       </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>50</width>
+         <width>40</width>
          <height>20</height>
         </size>
        </property>
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_z">
+      <widget class="QPushButton" name="pushButton_24">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -578,12 +622,12 @@
         </size>
        </property>
        <property name="text">
-        <string>z</string>
+        <string>я</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_x">
+      <widget class="QPushButton" name="pushButton_26">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -597,12 +641,12 @@
         </size>
        </property>
        <property name="text">
-        <string>x</string>
+        <string>ч</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_c">
+      <widget class="QPushButton" name="pushButton_27">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -616,12 +660,12 @@
         </size>
        </property>
        <property name="text">
-        <string>c</string>
+        <string>с</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_v">
+      <widget class="QPushButton" name="pushButton_28">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -635,12 +679,12 @@
         </size>
        </property>
        <property name="text">
-        <string>v</string>
+        <string>м</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_b">
+      <widget class="QPushButton" name="pushButton_29">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -654,12 +698,12 @@
         </size>
        </property>
        <property name="text">
-        <string>b</string>
+        <string>и</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_n">
+      <widget class="QPushButton" name="pushButton_32">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -673,12 +717,69 @@
         </size>
        </property>
        <property name="text">
-        <string>n</string>
+        <string>т</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_m">
+      <widget class="QPushButton" name="pushButton_33">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>ь</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_34">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>б</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_31">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>ю</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_30">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -697,7 +798,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_m_2">
+      <widget class="QPushButton" name="pushButton_35">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -716,7 +817,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_m_3">
+      <widget class="QPushButton" name="pushButton_36">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -735,16 +836,13 @@
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_4">
+      <spacer name="horizontalSpacer_7">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
-       </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>50</width>
+         <width>40</width>
          <height>20</height>
         </size>
        </property>

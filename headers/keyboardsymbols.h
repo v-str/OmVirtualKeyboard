@@ -4,6 +4,12 @@
 #include <QList>
 #include <QString>
 
+enum KeyType {
+    CHAR = 1,
+    CAPS = 4,
+    LANG = 3
+};
+
 enum DigitsFrameType{
     Digits,
     EngSpecialSymbols,
