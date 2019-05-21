@@ -32,6 +32,7 @@ private slots:
     void switchKeyboard();
     void switchDigitsFrame(DigitsFrameType digitsFrameType);
     void keyboardCharKeyPressed(const QString & keyText);
+    void deleteKey();
 
 private:
     void setInitialSettings();

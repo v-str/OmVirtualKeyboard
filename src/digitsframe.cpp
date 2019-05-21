@@ -41,7 +41,12 @@ void DigitsFrame::switchFrame()
 
 void DigitsFrame::digitPressed(const QString &text)
 {
-    qDebug() << text << " clicked!";
+    emit digitKeyPressed(text);
+}
+
+void DigitsFrame::deleteKeyPressed()
+{
+    emit deleteSymbol();
 }
 
 void DigitsFrame::setInitialSetting()
@@ -52,11 +57,13 @@ void DigitsFrame::setInitialSetting()
     m_digits = findChildren<QPushButton*> ();
     m_digits.removeLast();
 
-    for (auto i = 0; i < m_buttons.size(); ++i){
-        connect(m_buttons.at(i),&QPushButton::clicked, [=](){
-            digitPressed(m_buttons.at(i)->text());
+    for (auto i = 0; i < m_digits.size(); ++i){
+        connect(m_digits.at(i),&QPushButton::clicked, [=](){
+            digitPressed(m_digits.at(i)->text());
         });
     }
+
+    connect(m_buttons.last(), SIGNAL(clicked()), SLOT(deleteKeyPressed()));
 
     m_digitsFrameType = Digits;
 }

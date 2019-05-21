@@ -81,7 +81,6 @@ void KeyboardWidget::setConnections()
             [&](){
         switchDigitsFrame(RusSpecialSymbols);
     });
-
     connect(m_pEngKeyboard,SIGNAL(switchLangPressed()),SLOT(switchKeyboard()));
     connect(m_pRusKeyboard,SIGNAL(switchLangPressed()),SLOT(switchKeyboard()));
 
@@ -89,6 +88,10 @@ void KeyboardWidget::setConnections()
             SLOT(keyboardCharKeyPressed(QString)));
     connect(m_pRusKeyboard,SIGNAL(charKeyPressed(QString)),
             SLOT(keyboardCharKeyPressed(QString)));
+    connect(m_pDigitsFrame,SIGNAL(digitKeyPressed(QString)),
+            SLOT(keyboardCharKeyPressed(QString)));
+    connect(m_pDigitsFrame,SIGNAL(deleteSymbol()),
+            SLOT(deleteKey()));
 }
 
 void KeyboardWidget::switchDigitsFrame(DigitsFrameType digitsFrameType)
@@ -107,4 +110,9 @@ void KeyboardWidget::keyboardCharKeyPressed(const QString &keyText)
 {
     qDebug() << keyText << " clicked!";
     emit keyPressed(keyText);
+}
+
+void KeyboardWidget::deleteKey()
+{
+    qDebug() << "Delete clicked!";
 }

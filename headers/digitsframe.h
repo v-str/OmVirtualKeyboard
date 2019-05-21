@@ -25,11 +25,16 @@ public:
     void setFrameType(DigitsFrameType frameType);
     DigitsFrameType getFrameType() const;
 
+signals:
+    void digitKeyPressed(const QString & text);
+    void deleteSymbol();
+
 public slots:
     void switchFrame();
 
 private slots:
     void digitPressed(const QString & text);
+    void deleteKeyPressed();
 
 private:
     void setInitialSetting();
