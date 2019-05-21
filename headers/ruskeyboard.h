@@ -1,16 +1,13 @@
 #ifndef RUS_KEYBOARD_H
 #define RUS_KEYBOARD_H
 
-#include <QFrame>
-
-#include <QPushButton>
-#include <QList>
+#include "basekeyboard.h"
 
 namespace Ui {
 class RusKeyboard;
 }
 
-class RusKeyboard : public QFrame
+class RusKeyboard : public BaseKeyboard
 {
     Q_OBJECT
 
@@ -18,26 +15,8 @@ public:
     explicit RusKeyboard(QWidget *parent = Q_NULLPTR);
     ~RusKeyboard();
 
-signals:
-    void charKeyPressed(const QString & text);
-    void capsKeyPressed();
-    void switchLangPressed();
-
-private slots:
-    void keyPressed(const QString & text);
-    void invertCaps();
-
 private:
-    void setButtonList();
-    void setConnections();
-
-    void invertLetters();
-    void invertAlphabetEnding();
-
     Ui::RusKeyboard *ui = Q_NULLPTR;
-
-    QList<QPushButton*> m_buttonList;
-    bool m_isUpper = false;
 };
 
 #endif // RUS_KEYBOARD_H

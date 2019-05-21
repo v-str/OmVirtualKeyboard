@@ -6,8 +6,8 @@
 
 enum KeyType {
     CHAR = 1,
-    CAPS = 4,
-    LANG = 3
+    LANG = 3,
+    CAPS = 4
 };
 
 enum DigitsFrameType{

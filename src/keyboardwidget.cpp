@@ -6,7 +6,6 @@
 
 #include "engkeyboard.h"
 #include "ruskeyboard.h"
-#include "digitsframe.h"
 
 static constexpr short keyboard_width = 500;
 static constexpr short keyboard_height = 180;
@@ -27,19 +26,13 @@ KeyboardWidget::~KeyboardWidget()
 
 void KeyboardWidget::switchKeyboard()
 {
-    if (m_isEngKeyboardActive){
-        m_isEngKeyboardActive = false;
-        m_pEngKeyboard->deleteLater();
-        m_pRusKeyboard = new RusKeyboard;
-        m_pVLayout->addWidget(m_pRusKeyboard);
+    if (m_pEngKeyboard->isHidden()){
+        m_pRusKeyboard->hide();
+        m_pEngKeyboard->show();
     } else {
-        m_isEngKeyboardActive = true;
-        m_pRusKeyboard->deleteLater();
-        m_pEngKeyboard = new EngKeyboard;
-        m_pVLayout->addWidget(m_pEngKeyboard);
+        m_pEngKeyboard->hide();
+        m_pRusKeyboard->show();
     }
-
-    setLayout(m_pVLayout);
 }
 
 void KeyboardWidget::setInitialSettings()
@@ -57,9 +50,12 @@ void KeyboardWidget::setDefaultKeyboard()
     m_pVLayout = new QVBoxLayout;
     m_pDigitsFrame = new DigitsFrame;
     m_pEngKeyboard = new EngKeyboard;
+    m_pRusKeyboard = new RusKeyboard;
+    m_pRusKeyboard->hide();
 
     m_pVLayout->addWidget(m_pDigitsFrame);
     m_pVLayout->addWidget(m_pEngKeyboard);
+    m_pVLayout->addWidget(m_pRusKeyboard);
     m_pVLayout->setContentsMargins(2,2,2,2);
 
     setLayout(m_pVLayout);
@@ -67,18 +63,27 @@ void KeyboardWidget::setDefaultKeyboard()
 
 void KeyboardWidget::setConnections()
 {
-    connect(m_pEngKeyboard, &EngKeyboard::capsKeyPressed,m_pDigitsFrame,
+    connect(m_pEngKeyboard, &EngKeyboard::capsKeyPressed,this,
             [&](){
-        DigitsFrameType frameType = m_pDigitsFrame->getFrameType();
-        if (frameType != Digits){
-            m_pDigitsFrame->setFrameType(Digits);
-        } else {
-            m_pDigitsFrame->setFrameType(EngSpecialSymbols);
-        }
-
-        m_pDigitsFrame->switchFrame();
-
+        switchDigitsFrame(EngSpecialSymbols);
+    });
+    connect(m_pRusKeyboard, &EngKeyboard::capsKeyPressed,this,
+            [&](){
+        switchDigitsFrame(RusSpecialSymbols);
     });
 
-    connect(m_pEngKeyboard, SIGNAL(switchLangPressed()),SLOT(switchKeyboard()));
+    connect(m_pEngKeyboard,SIGNAL(switchLangPressed()),SLOT(switchKeyboard()));
+    connect(m_pRusKeyboard,SIGNAL(switchLangPressed()),SLOT(switchKeyboard()));
+}
+
+void KeyboardWidget::switchDigitsFrame(DigitsFrameType digitsFrameType)
+{
+    DigitsFrameType frameType = m_pDigitsFrame->getFrameType();
+    if (frameType != Digits){
+        m_pDigitsFrame->setFrameType(Digits);
+    } else {
+        m_pDigitsFrame->setFrameType(digitsFrameType);
+    }
+
+    m_pDigitsFrame->switchFrame();
 }
