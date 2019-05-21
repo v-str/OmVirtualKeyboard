@@ -12,6 +12,9 @@ EngKeyboard::EngKeyboard(QWidget *parent) :
     ui(new Ui::EngKeyboard)
 {
     ui->setupUi(this);
+
+    setButtonList(findChildren<QPushButton*>());
+    setUpperState(false);
 }
 
 EngKeyboard::~EngKeyboard()

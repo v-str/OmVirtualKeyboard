@@ -5,9 +5,10 @@
 #include <QVBoxLayout>
 
 #include "engkeyboard.h"
+#include "ruskeyboard.h"
 #include "digitsframe.h"
 
-static constexpr short keyboard_width = 520;
+static constexpr short keyboard_width = 500;
 static constexpr short keyboard_height = 180;
 
 KeyboardWidget::KeyboardWidget(QWidget *parent) :
@@ -24,6 +25,23 @@ KeyboardWidget::~KeyboardWidget()
     delete ui;
 }
 
+void KeyboardWidget::switchKeyboard()
+{
+    if (m_isEngKeyboardActive){
+        m_isEngKeyboardActive = false;
+        m_pEngKeyboard->deleteLater();
+        m_pRusKeyboard = new RusKeyboard;
+        m_pVLayout->addWidget(m_pRusKeyboard);
+    } else {
+        m_isEngKeyboardActive = true;
+        m_pRusKeyboard->deleteLater();
+        m_pEngKeyboard = new EngKeyboard;
+        m_pVLayout->addWidget(m_pEngKeyboard);
+    }
+
+    setLayout(m_pVLayout);
+}
+
 void KeyboardWidget::setInitialSettings()
 {
     ui->setupUi(this);
@@ -36,15 +54,15 @@ void KeyboardWidget::setInitialSettings()
 
 void KeyboardWidget::setDefaultKeyboard()
 {
-    QVBoxLayout * pVLayout = new QVBoxLayout;
+    m_pVLayout = new QVBoxLayout;
     m_pDigitsFrame = new DigitsFrame;
     m_pEngKeyboard = new EngKeyboard;
 
-    pVLayout->addWidget(m_pDigitsFrame);
-    pVLayout->addWidget(m_pEngKeyboard);
-    pVLayout->setContentsMargins(2,2,2,2);
+    m_pVLayout->addWidget(m_pDigitsFrame);
+    m_pVLayout->addWidget(m_pEngKeyboard);
+    m_pVLayout->setContentsMargins(2,2,2,2);
 
-    setLayout(pVLayout);
+    setLayout(m_pVLayout);
 }
 
 void KeyboardWidget::setConnections()
@@ -62,5 +80,5 @@ void KeyboardWidget::setConnections()
 
     });
 
-
+    connect(m_pEngKeyboard, SIGNAL(switchLangPressed()),SLOT(switchKeyboard()));
 }
