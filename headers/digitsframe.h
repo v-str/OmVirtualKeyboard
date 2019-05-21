@@ -3,6 +3,10 @@
 
 #include <QFrame>
 
+#include <QList>
+
+class QPushButton;
+
 namespace Ui {
 class DigitsFrame;
 }
@@ -17,6 +21,9 @@ public:
 
 private:
     Ui::DigitsFrame *ui = Q_NULLPTR;
+
+    QList<QPushButton*> m_englishSpecialSymbols;
+    QList<QPushButton*> m_russianSpecialSymbols;
 };
 
 #endif // DIGITS_FRAME_H

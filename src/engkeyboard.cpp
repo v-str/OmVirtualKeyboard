@@ -43,6 +43,7 @@ void EngKeyboard::setConnections()
             keyPressed(m_buttonList.at(i)->text());
         });
     }
+
     connect(this, &EngKeyboard::capsKeyPressed, [&](){
         QString text;
         for(auto i = 0; i < m_buttonList.size(); ++i){

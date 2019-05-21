@@ -1,14 +1,16 @@
 #include "specialsymbols.h"
-#include "ui_specialsymbols.h"
 
-SpecialSymbols::SpecialSymbols(QWidget *parent) :
-    QFrame(parent),
-    ui(new Ui::SpecialSymbols)
+QList<QString> SpecialSymbols::getDigits()
 {
-    ui->setupUi(this);
+    return {"1","2","3","4","5","6","7","8","9","0",};
 }
 
-SpecialSymbols::~SpecialSymbols()
+QList<QString> SpecialSymbols::getEnglishSpecialSymbols()
 {
-    delete ui;
+    return {"!","@","#","$","%","^","&","*","(",")",};
+}
+
+QList<QString> SpecialSymbols::getRussianSpecialSymbols()
+{
+    return {"!","\"","№",";","%",":","?","*","(",")",};
 }
