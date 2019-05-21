@@ -1,10 +1,16 @@
-#ifndef SPECIAL_SYMBOLS_H
-#define SPECIAL_SYMBOLS_H
+#ifndef KEYBOARD_SYMBOLS_H
+#define KEYBOARD_SYMBOLS_H
 
 #include <QList>
 #include <QString>
 
-class SpecialSymbols
+enum SpecialSymbolsType{
+    Digits,
+    EngSpecialSymbols,
+    RusSpecialSymbols
+};
+
+class KeyboardSymbols
 {
 public:
 
@@ -15,4 +21,4 @@ public:
 
 };
 
-#endif // SPECIAL_SYMBOLS_H
+#endif // KEYBOARD_SYMBOLS_H

@@ -49,5 +49,5 @@ void KeyboardWidget::setDefaultKeyboard()
 
 void KeyboardWidget::setConnections()
 {
-
+    connect(m_pEngKeyboard, SIGNAL(capsKeyPressed()),m_pDigitsFrame,SLOT(switchTo()));
 }

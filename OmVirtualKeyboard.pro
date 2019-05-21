@@ -18,7 +18,7 @@ INCLUDEPATH += \
         $$PWD/headers \
 
 SOURCES += \
-    specialsymbols.cpp \
+    keyboardsymbols.cpp \
     main.cpp \
     digitsframe.cpp \
     engkeyboard.cpp \
@@ -27,7 +27,7 @@ SOURCES += \
 HEADERS += \
     digitsframe.h \
     engkeyboard.h \
-    specialsymbols.h \
+    keyboardsymbols.h \
     keyboardwidget.h
 
 DISTFILES += \
