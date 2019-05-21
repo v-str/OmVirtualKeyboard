@@ -32,6 +32,7 @@ signals:
 
 private slots:
     void keyPressed(const QString & text);
+    void invertCaps();
 
 private:
     void setButtonList();

@@ -44,20 +44,23 @@ void EngKeyboard::setConnections()
         });
     }
 
-    connect(this, &EngKeyboard::capsKeyPressed, [&](){
-        QString text;
-        for(auto i = 0; i < m_buttonList.size(); ++i){
-            if (m_buttonList.at(i)->text().length() == CHAR){
-                if(m_buttonList.at(i)->text().isUpper()){
-                    text = m_buttonList[i]->text().toLower();
-                    m_buttonList[i]->setText(text);
-                } else {
-                    text = m_buttonList[i]->text().toUpper();
-                    m_buttonList[i]->setText(text);
-                }
+    connect(this, SIGNAL(capsKeyPressed()), SLOT(invertCaps()));
+}
+
+void EngKeyboard::invertCaps()
+{
+    QString text;
+    for(auto i = 0; i < m_buttonList.size(); ++i){
+        if (m_buttonList.at(i)->text().length() == CHAR){
+            if(m_buttonList.at(i)->text().isUpper()){
+                text = m_buttonList[i]->text().toLower();
+                m_buttonList[i]->setText(text);
+            } else {
+                text = m_buttonList[i]->text().toUpper();
+                m_buttonList[i]->setText(text);
             }
         }
-    });
+    }
 }
 
 
