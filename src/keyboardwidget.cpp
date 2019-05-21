@@ -108,11 +108,15 @@ void KeyboardWidget::switchDigitsFrame(DigitsFrameType digitsFrameType)
 
 void KeyboardWidget::keyboardCharKeyPressed(const QString &keyText)
 {
-    qDebug() << keyText << " clicked!";
-    emit keyPressed(keyText);
+    QString receiverString = m_pTextReceiver->text();
+    receiverString.append(keyText);
+    m_pTextReceiver->setText(receiverString);
 }
 
 void KeyboardWidget::deleteKey()
 {
-    qDebug() << "Delete clicked!";
+    QString receiverString = m_pTextReceiver->text();
+    auto lastSymbol = receiverString.size() - 1;
+    receiverString.remove(lastSymbol);
+    m_pTextReceiver->setText(receiverString);
 }
