@@ -75,7 +75,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="btn_caps">
+      <widget class="QPushButton" name="btn_lang">
        <property name="minimumSize">
         <size>
          <width>40</width>
@@ -89,7 +89,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Caps</string>
+        <string>Lang</string>
        </property>
       </widget>
      </item>
@@ -323,6 +323,25 @@
       </spacer>
      </item>
      <item>
+      <widget class="QPushButton" name="btn_caps">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Caps</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="btn_a">
        <property name="minimumSize">
         <size>
@@ -490,25 +509,6 @@
        </property>
        <property name="text">
         <string>l</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btn_lang">
-       <property name="minimumSize">
-        <size>
-         <width>70</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>70</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Language</string>
        </property>
       </widget>
      </item>
