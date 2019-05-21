@@ -4,7 +4,7 @@
 #include <QList>
 #include <QString>
 
-enum SpecialSymbolsType{
+enum DigitsFrameType{
     Digits,
     EngSpecialSymbols,
     RusSpecialSymbols

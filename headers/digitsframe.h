@@ -22,14 +22,18 @@ public:
     explicit DigitsFrame(QWidget *parent = Q_NULLPTR);
     ~DigitsFrame();
 
+    void setFrameType(DigitsFrameType frameType);
+    DigitsFrameType getFrameType() const;
+
 public slots:
-    void switchTo();
+    void switchFrame();
 
 private slots:
     void digitPressed(const QString & text);
 
 private:
     void setInitialSetting();
+    void redrawKeys(const QList<QString> & keys);
 
     Ui::DigitsFrame *ui = Q_NULLPTR;
 
@@ -37,6 +41,8 @@ private:
     QList<QPushButton*> m_russianSpecialSymbols;
     QList<QPushButton*> m_digits;
     QList<QPushButton*> m_buttons;
+
+    DigitsFrameType m_digitsFrameType;
 };
 
 #endif // DIGITS_FRAME_H

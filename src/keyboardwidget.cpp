@@ -49,5 +49,16 @@ void KeyboardWidget::setDefaultKeyboard()
 
 void KeyboardWidget::setConnections()
 {
-    connect(m_pEngKeyboard, SIGNAL(capsKeyPressed()),m_pDigitsFrame,SLOT(switchTo()));
+    connect(m_pEngKeyboard, &EngKeyboard::capsKeyPressed,m_pDigitsFrame,
+            [&](){
+        DigitsFrameType frameType = m_pDigitsFrame->getFrameType();
+        if (frameType != Digits){
+            m_pDigitsFrame->setFrameType(Digits);
+        } else {
+            m_pDigitsFrame->setFrameType(EngSpecialSymbols);
+        }
+
+        m_pDigitsFrame->switchFrame();
+
+    });
 }

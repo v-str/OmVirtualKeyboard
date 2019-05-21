@@ -7,7 +7,7 @@ QList<QString> KeyboardSymbols::getDigits()
 
 QList<QString> KeyboardSymbols::getEnglishSpecialSymbols()
 {
-    return {"!","@","#","$","%","^","&","*","(",")",};
+    return {"!","@","#","$","%","^","&&","*","(",")",};
 }
 
 QList<QString> KeyboardSymbols::getRussianSpecialSymbols()
