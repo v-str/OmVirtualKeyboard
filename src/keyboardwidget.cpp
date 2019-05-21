@@ -5,6 +5,7 @@
 
 #include <QFrame>
 #include <QVBoxLayout>
+#include <QLineEdit>
 
 #include "engkeyboard.h"
 #include "ruskeyboard.h"
@@ -24,6 +25,11 @@ KeyboardWidget::KeyboardWidget(QWidget *parent) :
 KeyboardWidget::~KeyboardWidget()
 {
     delete ui;
+}
+
+void KeyboardWidget::attachTo(QLineEdit *pTextReceiver)
+{
+    m_pTextReceiver = pTextReceiver;
 }
 
 void KeyboardWidget::switchKeyboard()

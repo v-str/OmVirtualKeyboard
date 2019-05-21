@@ -9,6 +9,7 @@
 
 class BaseKeyboard;
 class QVBoxLayout;
+class QLineEdit;
 
 namespace Ui {
 class KeyboardWidget;
@@ -21,6 +22,8 @@ class KeyboardWidget : public QWidget
 public:
     explicit KeyboardWidget(QWidget *parent = Q_NULLPTR);
     ~KeyboardWidget();
+
+    void attachTo(QLineEdit * pTextReceiver);
 
 signals:
     void keyPressed(const QString & keyText);
@@ -41,6 +44,7 @@ private:
     BaseKeyboard * m_pEngKeyboard = Q_NULLPTR;
     BaseKeyboard * m_pRusKeyboard = Q_NULLPTR;
     DigitsFrame * m_pDigitsFrame = Q_NULLPTR;
+    QLineEdit * m_pTextReceiver = Q_NULLPTR;
 };
 
 #endif // KEYBOARD_WIDGET_H
