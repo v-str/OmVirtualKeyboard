@@ -7,7 +7,7 @@
 #include "engkeyboard.h"
 #include "digitsframe.h"
 
-static constexpr short keyboard_width = 550;
+static constexpr short keyboard_width = 520;
 static constexpr short keyboard_height = 200;
 
 KeyboardWidget::KeyboardWidget(QWidget *parent) :
@@ -42,6 +42,7 @@ void KeyboardWidget::setDefaultKeyboard()
 
     pVLayout->addWidget(m_pDigitsFrame);
     pVLayout->addWidget(m_pEngKeyboard);
+    pVLayout->setContentsMargins(2,2,2,2);
 
     setLayout(pVLayout);
 }

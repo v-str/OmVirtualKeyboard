@@ -5,19 +5,34 @@ TEMPLATE = app
 
 CONFIG += c++14
 
+VPATH += \
+        $$PWD/src \
+        $$PWD/headers \
+
+DEPENDPATH += \
+        $$PWD/src \
+        $$PWD/headers \
+
 INCLUDEPATH += \
         $$PWD/src \
         $$PWD/headers \
 
-SOURCES += $$PWD/src/*.cpp \
+SOURCES += \
+    main.cpp \
+    digitsframe.cpp \
+    engkeyboard.cpp \
+    keyboardwidget.cpp
 
-HEADERS += $$PWD/headers/*.h \
+HEADERS += \
+    digitsframe.h \
+    engkeyboard.h \
+    keyboardwidget.h
 
 DISTFILES += \
     todo.om
 
 FORMS += \
-    src/digitsframe.ui \
-    src/engkeyboard.ui \
-    src/keyboardwidget.ui
+    digitsframe.ui \
+    engkeyboard.ui \
+    keyboardwidget.ui
 
