@@ -11,3 +11,7 @@ Just:
 1. qmake
 1. make
 1. launch application
+
+
+If you want get only sources without application launch code, please
+download [tight_sources](https://empty)
