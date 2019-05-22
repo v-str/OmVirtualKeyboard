@@ -15,11 +15,13 @@ static constexpr short keyboard_height = 180;
 
 static constexpr short last_char = 1;
 
-void performAmpersandCorrection ( QString * text )
+const QString performAmpersandCorrection ( const QString & text )
 {
-    if ( *text == "&&" ) {
-        text->chop ( last_char );
+    if ( text == "&&" ) {
+        return "&";
     }
+
+    return text;
 }
 
 KeyboardWidget::KeyboardWidget ( QWidget * parent ) :
@@ -39,6 +41,11 @@ KeyboardWidget::~KeyboardWidget()
 void KeyboardWidget::attachTo ( QLineEdit * pTextReceiver )
 {
     m_pTextReceiver = pTextReceiver;
+}
+
+void KeyboardWidget::detachReceiver()
+{
+    m_pTextReceiver = Q_NULLPTR;
 }
 
 void KeyboardWidget::switchKeyboard()
@@ -126,10 +133,9 @@ void KeyboardWidget::switchDigitsFrame ( DigitsFrameType digitsFrameType )
 void KeyboardWidget::keyboardCharKeyPressed ( const QString & keyText )
 {
     if ( isTextReceiverReady() ) {
-        QString receiverString = m_pTextReceiver->text();
-        performAmpersandCorrection ( &receiverString );
-        receiverString.append ( keyText );
-        m_pTextReceiver->setText ( receiverString );
+        QString temp = m_pTextReceiver->text();
+        temp.append ( performAmpersandCorrection ( keyText ) );
+        m_pTextReceiver->setText ( temp );
     }
 }
 

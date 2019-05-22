@@ -24,6 +24,7 @@ public:
     ~KeyboardWidget();
 
     void attachTo ( QLineEdit * pTextReceiver );
+    void detachReceiver();
 
 signals:
     void keyPressed ( const QString & keyText );
