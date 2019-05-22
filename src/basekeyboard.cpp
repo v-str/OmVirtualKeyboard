@@ -20,6 +20,8 @@ void BaseKeyboard::keyPressed ( const QString & text )
         emit capsKeyPressed();
     } else if ( text.length() == LANG ) {
         emit switchLangPressed();
+    } else {
+        emit charKeyPressed ( text );
     }
 }
 

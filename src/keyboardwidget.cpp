@@ -9,20 +9,12 @@
 
 #include "engkeyboard.h"
 #include "ruskeyboard.h"
+#include "keyboardtextcorrector.h"
 
 static constexpr short keyboard_width = 500;
 static constexpr short keyboard_height = 180;
 
 static constexpr short last_char = 1;
-
-const QString performAmpersandCorrection ( const QString & text )
-{
-    if ( text == "&&" ) {
-        return "&";
-    }
-
-    return text;
-}
 
 KeyboardWidget::KeyboardWidget ( QWidget * parent ) :
     QWidget ( parent ),
@@ -132,11 +124,15 @@ void KeyboardWidget::switchDigitsFrame ( DigitsFrameType digitsFrameType )
 
 void KeyboardWidget::keyboardCharKeyPressed ( const QString & keyText )
 {
-    if ( isTextReceiverReady() ) {
-        QString temp = m_pTextReceiver->text();
-        temp.append ( performAmpersandCorrection ( keyText ) );
-        m_pTextReceiver->setText ( temp );
-    }
+    QString temp =  KeyboardTextCorrector::performKeyboardTextCorrection (
+                                    keyText );
+    //    if ( isTextReceiverReady() ) {
+    //        QString temp = m_pTextReceiver->text();
+    //        temp.append ( KeyboardTextCorrector::performKeyboardTextCorrection (
+    //                                      keyText ) );
+    //        m_pTextReceiver->setText ( temp );
+    //    }
+    qDebug() << "value: " << temp;
 }
 
 void KeyboardWidget::deleteKey()

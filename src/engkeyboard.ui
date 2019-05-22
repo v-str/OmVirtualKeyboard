@@ -659,6 +659,25 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="btn_space">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>space</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="btn_n">
        <property name="minimumSize">
         <size>
