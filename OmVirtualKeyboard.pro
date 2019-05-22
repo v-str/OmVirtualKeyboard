@@ -1,4 +1,4 @@
-QT += core gui widgets virtualkeyboard dbus
+QT += core gui widgets dbus
 
 TARGET = OmVirtualKeyboard
 TEMPLATE = app
