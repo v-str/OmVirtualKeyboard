@@ -15,6 +15,13 @@ static constexpr short keyboard_height = 180;
 
 static constexpr short last_char = 1;
 
+void performAmpersandCorrection(QString * text)
+{
+    if (*text == "&&"){
+        text->chop(last_char);
+    }
+}
+
 KeyboardWidget::KeyboardWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::KeyboardWidget)
@@ -120,6 +127,7 @@ void KeyboardWidget::keyboardCharKeyPressed(const QString &keyText)
 {
     if (isTextReceiverReady()) {
         QString receiverString = m_pTextReceiver->text();
+        performAmpersandCorrection(&receiverString);
         receiverString.append(keyText);
         m_pTextReceiver->setText(receiverString);
     }
