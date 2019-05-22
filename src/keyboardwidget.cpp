@@ -13,6 +13,8 @@
 static constexpr short keyboard_width = 500;
 static constexpr short keyboard_height = 180;
 
+static constexpr short last_char = 1;
+
 KeyboardWidget::KeyboardWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::KeyboardWidget)
@@ -124,8 +126,7 @@ void KeyboardWidget::deleteKey()
 {
     if (isTextReceiverReady()){
         QString receiverString = m_pTextReceiver->text();
-        auto lastSymbol = receiverString.size() - 1;
-        receiverString.remove(lastSymbol);
+        receiverString.chop(last_char);
         m_pTextReceiver->setText(receiverString);
     }
 }
