@@ -36,6 +36,9 @@ void KeyboardWidget::attachTo(QLineEdit *pTextReceiver)
 
 void KeyboardWidget::switchKeyboard()
 {
+    m_pDigitsFrame->setFrameType(Digits);
+    m_pDigitsFrame->switchFrame();
+
     if (m_pEngKeyboard->isHidden()){
         m_pRusKeyboard->hide();
         setFixedWidth(m_pEngKeyboard->getOptimalParentWidgetWidth());
