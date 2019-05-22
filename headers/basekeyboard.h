@@ -17,6 +17,7 @@ public:
 
 signals:
     void charKeyPressed(const QString & text);
+
     void capsKeyPressed();
     void switchLangPressed();
 
