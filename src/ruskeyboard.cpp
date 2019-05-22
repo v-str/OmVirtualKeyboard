@@ -1,8 +1,6 @@
 #include "ruskeyboard.h"
 #include "ui_ruskeyboard.h"
 
-#include <QDebug>
-
 #include "keyboardsymbols.h"
 
 static constexpr short optimalParentWidgetWidth = 620;

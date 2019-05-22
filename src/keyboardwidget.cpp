@@ -1,8 +1,6 @@
 #include "keyboardwidget.h"
 #include "ui_keyboardwidget.h"
 
-#include <QDebug>
-
 #include <QFrame>
 #include <QVBoxLayout>
 #include <QLineEdit>
@@ -124,15 +122,12 @@ void KeyboardWidget::switchDigitsFrame ( DigitsFrameType digitsFrameType )
 
 void KeyboardWidget::keyboardCharKeyPressed ( const QString & keyText )
 {
-    QString temp =  KeyboardTextCorrector::performKeyboardTextCorrection (
-                                    keyText );
-    //    if ( isTextReceiverReady() ) {
-    //        QString temp = m_pTextReceiver->text();
-    //        temp.append ( KeyboardTextCorrector::performKeyboardTextCorrection (
-    //                                      keyText ) );
-    //        m_pTextReceiver->setText ( temp );
-    //    }
-    qDebug() << "value: " << temp;
+    if ( isTextReceiverReady() ) {
+        QString temp = m_pTextReceiver->text();
+        temp.append ( KeyboardTextCorrector::performKeyboardTextCorrection (
+                                      keyText ) );
+        m_pTextReceiver->setText ( temp );
+    }
 }
 
 void KeyboardWidget::deleteKey()

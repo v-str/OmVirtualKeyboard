@@ -1,8 +1,6 @@
 #include "engkeyboard.h"
 #include "ui_engkeyboard.h"
 
-#include <QDebug>
-
 #include "keyboardsymbols.h"
 
 static constexpr short optimalParentWidgetWidth = 500;

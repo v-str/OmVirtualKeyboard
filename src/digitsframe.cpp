@@ -1,7 +1,6 @@
 #include "digitsframe.h"
 #include "ui_digitsframe.h"
 
-#include <QDebug>
 #include <QPushButton>
 
 DigitsFrame::DigitsFrame ( QWidget * parent ) :

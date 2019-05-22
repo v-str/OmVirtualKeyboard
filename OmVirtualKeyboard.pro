@@ -25,7 +25,7 @@ SOURCES += \
     digitsframe.cpp \
     engkeyboard.cpp \
     keyboardwidget.cpp \
-    src/keyboardtextcorrector.cpp
+    keyboardtextcorrector.cpp
 
 HEADERS += \
     digitsframe.h \
@@ -34,7 +34,7 @@ HEADERS += \
     ruskeyboard.h \
     keyboardsymbols.h \
     keyboardwidget.h \
-    src/keyboardtextcorrector.h
+    keyboardtextcorrector.h
 
 DISTFILES += \
     todo.om
