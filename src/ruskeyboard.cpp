@@ -7,14 +7,13 @@
 
 static constexpr short optimalParentWidgetWidth = 620;
 
-RusKeyboard::RusKeyboard(QWidget *parent) :
-    BaseKeyboard(parent),
-    ui(new Ui::RusKeyboard)
+RusKeyboard::RusKeyboard ( QWidget * parent ) :
+    BaseKeyboard ( parent ),
+    ui ( new Ui::RusKeyboard )
 {
-    ui->setupUi(this);
-
-    setButtonList(findChildren<QPushButton*>());
-    setUpperState(false);
+    ui->setupUi ( this );
+    setButtonList ( findChildren<QPushButton *>() );
+    setUpperState ( false );
 }
 
 RusKeyboard::~RusKeyboard()

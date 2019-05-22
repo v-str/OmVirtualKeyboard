@@ -9,14 +9,13 @@ static constexpr short optimalParentWidgetWidth = 500;
 
 static constexpr int lastNonAlphabetSymbolsCount = 3;
 
-EngKeyboard::EngKeyboard(QWidget *parent) :
-    BaseKeyboard(parent),
-    ui(new Ui::EngKeyboard)
+EngKeyboard::EngKeyboard ( QWidget * parent ) :
+    BaseKeyboard ( parent ),
+    ui ( new Ui::EngKeyboard )
 {
-    ui->setupUi(this);
-
-    setButtonList(findChildren<QPushButton*>());
-    setUpperState(false);
+    ui->setupUi ( this );
+    setButtonList ( findChildren<QPushButton *>() );
+    setUpperState ( false );
 }
 
 EngKeyboard::~EngKeyboard()

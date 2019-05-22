@@ -10,42 +10,42 @@
 
 class QPushButton;
 
-namespace Ui {
-class DigitsFrame;
+namespace Ui
+{
+    class DigitsFrame;
 }
 
-class DigitsFrame : public QFrame
-{
+class DigitsFrame : public QFrame {
     Q_OBJECT
 
 public:
-    explicit DigitsFrame(QWidget *parent = Q_NULLPTR);
+    explicit DigitsFrame ( QWidget * parent = Q_NULLPTR );
     ~DigitsFrame();
 
-    void setFrameType(DigitsFrameType frameType);
+    void setFrameType ( DigitsFrameType frameType );
     DigitsFrameType getFrameType() const;
 
 signals:
-    void digitKeyPressed(const QString & text);
+    void digitKeyPressed ( const QString & text );
     void deleteSymbol();
 
 public slots:
     void switchFrame();
 
 private slots:
-    void digitPressed(const QString & text);
+    void digitPressed ( const QString & text );
     void deleteKeyPressed();
 
 private:
     void setInitialSetting();
-    void redrawKeys(const QList<QString> & keys);
+    void redrawKeys ( const QList<QString> & keys );
 
-    Ui::DigitsFrame *ui = Q_NULLPTR;
+    Ui::DigitsFrame * ui = Q_NULLPTR;
 
-    QList<QPushButton*> m_englishSpecialSymbols;
-    QList<QPushButton*> m_russianSpecialSymbols;
-    QList<QPushButton*> m_digits;
-    QList<QPushButton*> m_buttons;
+    QList<QPushButton *> m_englishSpecialSymbols;
+    QList<QPushButton *> m_russianSpecialSymbols;
+    QList<QPushButton *> m_digits;
+    QList<QPushButton *> m_buttons;
 
     DigitsFrameType m_digitsFrameType;
 };

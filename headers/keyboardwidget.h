@@ -11,27 +11,27 @@ class BaseKeyboard;
 class QVBoxLayout;
 class QLineEdit;
 
-namespace Ui {
-class KeyboardWidget;
+namespace Ui
+{
+    class KeyboardWidget;
 }
 
-class KeyboardWidget : public QWidget
-{
+class KeyboardWidget : public QWidget {
     Q_OBJECT
 
 public:
-    explicit KeyboardWidget(QWidget *parent = Q_NULLPTR);
+    explicit KeyboardWidget ( QWidget * parent = Q_NULLPTR );
     ~KeyboardWidget();
 
-    void attachTo(QLineEdit * pTextReceiver);
+    void attachTo ( QLineEdit * pTextReceiver );
 
 signals:
-    void keyPressed(const QString & keyText);
+    void keyPressed ( const QString & keyText );
 
 private slots:
     void switchKeyboard();
-    void switchDigitsFrame(DigitsFrameType digitsFrameType);
-    void keyboardCharKeyPressed(const QString & keyText);
+    void switchDigitsFrame ( DigitsFrameType digitsFrameType );
+    void keyboardCharKeyPressed ( const QString & keyText );
     void deleteKey();
 
 private:
@@ -40,7 +40,7 @@ private:
     void setConnections();
     bool isTextReceiverReady() const;
 
-    Ui::KeyboardWidget *ui = Q_NULLPTR;
+    Ui::KeyboardWidget * ui = Q_NULLPTR;
 
     QVBoxLayout * m_pVLayout = Q_NULLPTR;
     BaseKeyboard * m_pEngKeyboard = Q_NULLPTR;

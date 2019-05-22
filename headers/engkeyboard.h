@@ -3,22 +3,22 @@
 
 #include "basekeyboard.h"
 
-namespace Ui {
-class EngKeyboard;
+namespace Ui
+{
+    class EngKeyboard;
 }
 
-class EngKeyboard : public BaseKeyboard
-{
+class EngKeyboard : public BaseKeyboard {
     Q_OBJECT
 
 public:
-    explicit EngKeyboard(QWidget *parent = Q_NULLPTR);
+    explicit EngKeyboard ( QWidget * parent = Q_NULLPTR );
     ~EngKeyboard();
 
     short getOptimalParentWidgetWidth() const override;
 
 private:
-    Ui::EngKeyboard *ui = Q_NULLPTR;
+    Ui::EngKeyboard * ui = Q_NULLPTR;
 };
 
 #endif // ENG_KEYBOARD_H

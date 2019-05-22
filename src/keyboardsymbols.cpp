@@ -2,25 +2,25 @@
 
 QList<QString> KeyboardSymbols::getDigits()
 {
-    return {"1","2","3","4","5","6","7","8","9","0",};
+    return {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0",};
 }
 
 QList<QString> KeyboardSymbols::getEnglishSpecialSymbols()
 {
-    return {"!","@","#","$","%","^","&&","*","(",")",};
+    return {"!", "@", "#", "$", "%", "^", "&&", "*", "(", ")",};
 }
 
 QList<QString> KeyboardSymbols::getNonCapsLastSymbols()
 {
-    return {",",".","/"};
+    return {",", ".", "/"};
 }
 
 QList<QString> KeyboardSymbols::getCapsLastSymbols()
 {
-    return {"-","_","\\"};
+    return {"-", "_", "\\"};
 }
 
 QList<QString> KeyboardSymbols::getRussianSpecialSymbols()
 {
-    return {"!","\"","№",";","%",":","?","*","(",")",};
+    return {"!", "\"", "№", ";", "%", ":", "?", "*", "(", ")",};
 }

@@ -15,16 +15,16 @@ static constexpr short keyboard_height = 180;
 
 static constexpr short last_char = 1;
 
-void performAmpersandCorrection(QString * text)
+void performAmpersandCorrection ( QString * text )
 {
-    if (*text == "&&"){
-        text->chop(last_char);
+    if ( *text == "&&" ) {
+        text->chop ( last_char );
     }
 }
 
-KeyboardWidget::KeyboardWidget(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::KeyboardWidget)
+KeyboardWidget::KeyboardWidget ( QWidget * parent ) :
+    QWidget ( parent ),
+    ui ( new Ui::KeyboardWidget )
 {
     setInitialSettings();
     setDefaultKeyboard();
@@ -36,35 +36,35 @@ KeyboardWidget::~KeyboardWidget()
     delete ui;
 }
 
-void KeyboardWidget::attachTo(QLineEdit *pTextReceiver)
+void KeyboardWidget::attachTo ( QLineEdit * pTextReceiver )
 {
     m_pTextReceiver = pTextReceiver;
 }
 
 void KeyboardWidget::switchKeyboard()
 {
-    m_pDigitsFrame->setFrameType(Digits);
+    m_pDigitsFrame->setFrameType ( Digits );
     m_pDigitsFrame->switchFrame();
 
-    if (m_pEngKeyboard->isHidden()){
+    if ( m_pEngKeyboard->isHidden() ) {
         m_pRusKeyboard->hide();
-        setFixedWidth(m_pEngKeyboard->getOptimalParentWidgetWidth());
+        setFixedWidth ( m_pEngKeyboard->getOptimalParentWidgetWidth() );
         m_pEngKeyboard->show();
     } else {
         m_pEngKeyboard->hide();
-        setFixedWidth(m_pRusKeyboard->getOptimalParentWidgetWidth());
+        setFixedWidth ( m_pRusKeyboard->getOptimalParentWidgetWidth() );
         m_pRusKeyboard->show();
     }
 }
 
 void KeyboardWidget::setInitialSettings()
 {
-    ui->setupUi(this);
-    setWindowFlags(Qt::WindowDoesNotAcceptFocus |
-                   Qt::Tool |
-                   Qt::FramelessWindowHint |
-                   Qt::WindowStaysOnTopHint);
-    setFixedSize(keyboard_width, keyboard_height);
+    ui->setupUi ( this );
+    setWindowFlags ( Qt::WindowDoesNotAcceptFocus |
+                     Qt::Tool |
+                     Qt::FramelessWindowHint |
+                     Qt::WindowStaysOnTopHint );
+    setFixedSize ( keyboard_width, keyboard_height );
 }
 
 void KeyboardWidget::setDefaultKeyboard()
@@ -74,36 +74,35 @@ void KeyboardWidget::setDefaultKeyboard()
     m_pEngKeyboard = new EngKeyboard;
     m_pRusKeyboard = new RusKeyboard;
     m_pRusKeyboard->hide();
-
-    m_pVLayout->addWidget(m_pDigitsFrame);
-    m_pVLayout->addWidget(m_pEngKeyboard);
-    m_pVLayout->addWidget(m_pRusKeyboard);
-    m_pVLayout->setContentsMargins(2,2,2,2);
-
-    setLayout(m_pVLayout);
+    m_pVLayout->addWidget ( m_pDigitsFrame );
+    m_pVLayout->addWidget ( m_pEngKeyboard );
+    m_pVLayout->addWidget ( m_pRusKeyboard );
+    m_pVLayout->setContentsMargins ( 2, 2, 2, 2 );
+    setLayout ( m_pVLayout );
 }
 
 void KeyboardWidget::setConnections()
 {
-    connect(m_pEngKeyboard, &EngKeyboard::capsKeyPressed,this,
-            [&](){
-        switchDigitsFrame(EngSpecialSymbols);
-    });
-    connect(m_pRusKeyboard, &EngKeyboard::capsKeyPressed,this,
-            [&](){
-        switchDigitsFrame(RusSpecialSymbols);
-    });
-    connect(m_pEngKeyboard,SIGNAL(switchLangPressed()),SLOT(switchKeyboard()));
-    connect(m_pRusKeyboard,SIGNAL(switchLangPressed()),SLOT(switchKeyboard()));
-
-    connect(m_pEngKeyboard,SIGNAL(charKeyPressed(QString)),
-            SLOT(keyboardCharKeyPressed(QString)));
-    connect(m_pRusKeyboard,SIGNAL(charKeyPressed(QString)),
-            SLOT(keyboardCharKeyPressed(QString)));
-    connect(m_pDigitsFrame,SIGNAL(digitKeyPressed(QString)),
-            SLOT(keyboardCharKeyPressed(QString)));
-    connect(m_pDigitsFrame,SIGNAL(deleteSymbol()),
-            SLOT(deleteKey()));
+    connect ( m_pEngKeyboard, &EngKeyboard::capsKeyPressed, this,
+    [&]() {
+        switchDigitsFrame ( EngSpecialSymbols );
+    } );
+    connect ( m_pRusKeyboard, &EngKeyboard::capsKeyPressed, this,
+    [&]() {
+        switchDigitsFrame ( RusSpecialSymbols );
+    } );
+    connect ( m_pEngKeyboard, SIGNAL ( switchLangPressed() ),
+              SLOT ( switchKeyboard() ) );
+    connect ( m_pRusKeyboard, SIGNAL ( switchLangPressed() ),
+              SLOT ( switchKeyboard() ) );
+    connect ( m_pEngKeyboard, SIGNAL ( charKeyPressed ( QString ) ),
+              SLOT ( keyboardCharKeyPressed ( QString ) ) );
+    connect ( m_pRusKeyboard, SIGNAL ( charKeyPressed ( QString ) ),
+              SLOT ( keyboardCharKeyPressed ( QString ) ) );
+    connect ( m_pDigitsFrame, SIGNAL ( digitKeyPressed ( QString ) ),
+              SLOT ( keyboardCharKeyPressed ( QString ) ) );
+    connect ( m_pDigitsFrame, SIGNAL ( deleteSymbol() ),
+              SLOT ( deleteKey() ) );
 }
 
 bool KeyboardWidget::isTextReceiverReady() const
@@ -111,33 +110,34 @@ bool KeyboardWidget::isTextReceiverReady() const
     return m_pTextReceiver != Q_NULLPTR;
 }
 
-void KeyboardWidget::switchDigitsFrame(DigitsFrameType digitsFrameType)
+void KeyboardWidget::switchDigitsFrame ( DigitsFrameType digitsFrameType )
 {
     DigitsFrameType frameType = m_pDigitsFrame->getFrameType();
-    if (frameType != Digits){
-        m_pDigitsFrame->setFrameType(Digits);
+
+    if ( frameType != Digits ) {
+        m_pDigitsFrame->setFrameType ( Digits );
     } else {
-        m_pDigitsFrame->setFrameType(digitsFrameType);
+        m_pDigitsFrame->setFrameType ( digitsFrameType );
     }
 
     m_pDigitsFrame->switchFrame();
 }
 
-void KeyboardWidget::keyboardCharKeyPressed(const QString &keyText)
+void KeyboardWidget::keyboardCharKeyPressed ( const QString & keyText )
 {
-    if (isTextReceiverReady()) {
+    if ( isTextReceiverReady() ) {
         QString receiverString = m_pTextReceiver->text();
-        performAmpersandCorrection(&receiverString);
-        receiverString.append(keyText);
-        m_pTextReceiver->setText(receiverString);
+        performAmpersandCorrection ( &receiverString );
+        receiverString.append ( keyText );
+        m_pTextReceiver->setText ( receiverString );
     }
 }
 
 void KeyboardWidget::deleteKey()
 {
-    if (isTextReceiverReady()){
+    if ( isTextReceiverReady() ) {
         QString receiverString = m_pTextReceiver->text();
-        receiverString.chop(last_char);
-        m_pTextReceiver->setText(receiverString);
+        receiverString.chop ( last_char );
+        m_pTextReceiver->setText ( receiverString );
     }
 }

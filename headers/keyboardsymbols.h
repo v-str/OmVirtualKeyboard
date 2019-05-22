@@ -10,14 +10,13 @@ enum KeyType {
     CAPS = 4
 };
 
-enum DigitsFrameType{
+enum DigitsFrameType {
     Digits,
     EngSpecialSymbols,
     RusSpecialSymbols
 };
 
-class KeyboardSymbols
-{
+class KeyboardSymbols {
 public:
 
     static QList<QString> getDigits();
