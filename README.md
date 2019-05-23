@@ -14,4 +14,4 @@ Just:
 
 
 If you want get only sources without application launch code, please
-download [tight_sources](https://empty)
+download [sources](https://empty)
