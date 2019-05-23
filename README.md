@@ -4,16 +4,16 @@
 
 [![Build Status](https://travis-ci.org/OrdinaryMind/OmVirtualKeyboard.svg?branch=develop)](https://travis-ci.com/OrdinaryMind/OmVirtualKeyboard)
 
-<img src='https://github.com/OrdinaryMind/OmVirtualKeyboard/blob/sources_app/keyboard_sources_app.png'>
+<img src='https://github.com/OrdinaryMind/OmVirtualKeyboard/blob/sources_only/keyboard_sources_app.png'>
 
-Virtual keyboard implemented as standalone launchable application.
-Just:
+Virtual keyboard source files.
+Usage of this keyboard is very easy and fun.
 
-1. git clone this repository
-1. qmake
-1. make
-1. launch application
+In general, you should do few steps:
 
+1. Place the sources into you favorite application source tree
+1. Insert sources and headers into your build system (qmake,make,CMake)
+1. Use it!
 
-If you want get only sources without application launch code, please
-download [sources](https://empty)
+ 
+If you want to see lauchable application, please see [sources_app](https://github.com/OrdinaryMind/OmVirtualKeyboard/tree/sources_app)
