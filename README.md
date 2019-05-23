@@ -4,6 +4,8 @@
 
 [![Build Status](https://travis-ci.org/OrdinaryMind/OmVirtualKeyboard.svg?branch=develop)](https://travis-ci.com/OrdinaryMind/OmVirtualKeyboard)
 
+<img src='https://github.com/OrdinaryMind/OmVirtualKeyboard/blob/sources_app/keyboard_sources_app.png'>
+
 Virtual keyboard implemented as standalone launchable application.
 Just:
 
