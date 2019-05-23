@@ -1,6 +1,6 @@
 ### OmVirtualKeyboard
 
-## Branch: tight bouned sources
+## Branch: sources_app
 
 [![Build Status](https://travis-ci.org/OrdinaryMind/OmVirtualKeyboard.svg?branch=develop)](https://travis-ci.com/OrdinaryMind/OmVirtualKeyboard)
 
