@@ -26,6 +26,8 @@ instance and connect it with your QLineEdit:
 
 ```C++
 
+#include "keyboardwidget.h"
+
 SomeClassConstructor::SomeClassConstructor(QWidget * parent)
 	: QWidget(parent)
 {
