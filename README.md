@@ -6,7 +6,7 @@
 
 <img src='https://github.com/OrdinaryMind/OmVirtualKeyboard/blob/sources_only/keyboard_sources_app.png'>
 
-#Note
+# Note
 If you want to see lauchable application, please see [sources_app](https://github.com/OrdinaryMind/OmVirtualKeyboard/tree/sources_app)
 
 Virtual keyboard source files.
