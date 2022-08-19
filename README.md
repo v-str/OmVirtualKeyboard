@@ -17,3 +17,5 @@ Just:
 
 If you want get only sources without application launch code, please
 download [sources](https://github.com/OrdinaryMind/OmVirtualKeyboard/tree/sources_only)
+
+Github savecommit
